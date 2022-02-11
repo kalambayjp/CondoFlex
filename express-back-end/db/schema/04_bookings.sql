@@ -5,7 +5,7 @@ CREATE TABLE bookings (
   user_id VARCHAR(255) NOT NULL,
   amenity_id VARCHAR(255) NOT NULL,
   number_of_people VARCHAR(255) NOT NULL,
-  start_time timestamp NOT NULL,
-  end_time timestamp NOT NULL
+  start_time TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  end_time TIMESTAMP WITH TIME ZONE DEFAULT NOW() + time '00:30'
 );
 

@@ -6,7 +6,7 @@ CREATE TABLE buildings (
   building_code VARCHAR(255) NOT NULL,
   image TEXT,
   capacity int,
-  open_time timestamp NOT NULL,
-  close_time timestamp NOT NULL
+  open_time TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  close_time TIMESTAMP NOT NULL
 );
 
