@@ -5,10 +5,9 @@ CREATE TABLE amenities (
   building_id VARCHAR(255) NOT NULL,
   name VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
-  email TEXT,
-  password VARCHAR(255) NOT NULL,
-  phone_number VARCHAR(255) NOT NULL,
-  unit_number VARCHAR(40) NOT NULL,
-  image TEXT
+  image TEXT,
+  capacity int,
+  open_time TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  close_time TIMESTAMP WITH TIME ZONE DEFAULT NOW() + time '16:00'
 );
 
