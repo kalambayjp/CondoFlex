@@ -1,7 +1,8 @@
 import React from "react";
 import "./nav.css";
 
-function Nav() {
+function Nav(props) {
+  const {state, setState} = props;
   return (
     <nav class="navbar fixed-top navbar-light bg-light">
       <div class="container-fluid">
@@ -9,12 +10,12 @@ function Nav() {
           Logo
         </a>
         <section>
-          <a class="navbar-brand" href="#">
+          <span class="navbar-brand" href="#">
             Login
-          </a>
-          <a class="navbar-brand" href="#">
+          </span>
+          <button class="navbar-brand" onClick={() => setState("register")}>
             Register
-          </a>
+          </button>
         </section>
       </div>
     </nav>
