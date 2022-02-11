@@ -66,6 +66,7 @@ button:hover {
   transform: scale(0.8);
   align-content: center;
   align-self: center;
+  box-shadow: 1px 1px #88888800;
 }
 
 .login_email {
