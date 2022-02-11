@@ -1,27 +1,26 @@
 import React from "react";
 import "./App.css";
-import Nav from "./nav.js"
+import Nav from "./nav.js";
+import Footer from "./footer";
+import Header from "./header";
 
 function App() {
   return (
     <main>
-      <section>
-        
-        
-
-        <nav>
-          <Nav />
-        </nav>
-
-      </section>
+      <nav>
+        <Nav />
+      </nav>
 
       <body>
-        pictures of registered builings?
+      <Header />
+        
+
+        
       </body>
 
-      <section >
-        footer
-      </section>
+      <footer className="bottom">
+        <Footer />
+      </footer>
     </main>
   );
 }
