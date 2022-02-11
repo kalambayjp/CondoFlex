@@ -1,23 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 import Nav from "./nav.js";
 import Footer from "./footer";
 import Header from "./header";
+import Register from "./register";
+
 
 function App() {
+  const [state, setState] = useState([])
+
   return (
     <main>
       <nav>
-        <Nav />
+        <Nav state={state} setState= {setState} />
       </nav>
+      <header>
+        <Header />
+      </header>
+      <div className="page-content">
+        <body>
+        </body>
+          <content>
+            
 
-      <body>
-      <Header />
-        
-
-        
-      </body>
-
+            {state === "register" && <Register />}
+          
+            
+          </content>
+      </div>
       <footer className="bottom">
         <Footer />
       </footer>

@@ -6,13 +6,55 @@ main {
 }
 body {
   background-image: url("https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?cs=srgb&dl=pexels-jovydas-pinkevicius-2462015.jpg&fm=jpg");
-  background-size: cover;
-  opacity: 0.8;
-
   
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+/* appear - on page load */
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+
+/* enter */
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
+
+
+
+
+
+.page-content {
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 #footer {
+  opacity: 0.8;
   position: absolute;
   bottom: 0px;
   width: 100%;
