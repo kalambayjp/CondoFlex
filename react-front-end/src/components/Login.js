@@ -33,13 +33,14 @@ export default function Login() {
   }
 
   return (
-    <main>
+
       <div className="login_container">
-        <div className="login_arrange_container">
+          <br/>
           <h2>Login</h2>
           <form onSubmit={submitLogin}>
             <div className="login_email">
               <label for="username" id="title_label">
+                <br/>
                 Email :
               </label>
               <br />
@@ -47,6 +48,7 @@ export default function Login() {
                 className="input"
                 type="email"
                 email={email}
+                placeholder="ABC@gmail.com"
                 onChange={(event) => setEmail(event.target.value)}
               />
             </div>
@@ -65,12 +67,14 @@ export default function Login() {
             </div>
             <br />
 
-            <button type="submit" id="button_to_login">
+            <button type="submit" id="btn_submit">
               Submit
             </button>
+            
+
+            
           </form>
-        </div>
+        
       </div>
-    </main>
   );
 }
