@@ -5,8 +5,8 @@ function Nav(props) {
   const {state, setState} = props;
   return (
     <nav class="navbar fixed-top navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">
           Logo
         </a>
         <section>

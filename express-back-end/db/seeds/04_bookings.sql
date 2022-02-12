@@ -1,9 +1,0 @@
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (2,1,3);
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (2,2,3);
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (2,3,3);
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (1,1,1);
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (1,2,2);
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (1,3,3);
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (3,1,2);
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (3,2,1);
-INSERT INTO bookings (user_id,amenity_id,number_of_people) VALUES (3,3,3);

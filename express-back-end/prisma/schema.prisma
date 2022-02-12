@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id       Int        @id @default(autoincrement())
+  bookings bookings[]
+
+  first_name    String
+  last_name     String
+  email         String  @unique
+  password      String
+  phone_number  Int
+  unit_number   Int
+  building_code Int
+  is_admin      Boolean @default(false)
+}
+
+model buildings {
+  id        Int         @id
+  amenities amenities[]
+
+  building_code Int    @unique
+  name          String
+  address       String
+  image         String
+}
+
+model amenities {
+  id       Int        @id @default(autoincrement())
+  bookings bookings[]
+
+  building    buildings @relation(fields: [building_id], references: [id])
+  building_id Int
+
+  name        String
+  description String   @db.VarChar(255)
+  image       String
+  capacity    Int
+  open_time   Int
+  close_time  Int
+}
+
+model bookings {
+  id Int @id @default(autoincrement())
+
+  user    users @relation(fields: [user_id], references: [id])
+  user_id Int
+
+  amenity    amenities @relation(fields: [amenity_id], references: [id])
+  amenity_id Int
+
+  number_of_ppl Int
+  start_time    Int
+  end_time      Int
+}

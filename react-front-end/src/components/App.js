@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React from "react";
 import "./App.css";
 import Nav from "./nav.js";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
+import {getData} from "../hooks/getData"
 
 
 function App() {
-  const [state, setState] = useState([])
+  const {state, setState} = getData()
+  console.log(state)
 
   return (
     <main>

@@ -5,12 +5,20 @@
   "main": "server.js",
   "author": "garrettgsb",
   "license": "MIT",
+  
   "scripts": {
     "go": "nodemon server.js"
   },
   "dependencies": {
+    "@prisma/client": "^3.9.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "nodemon": "^1.18.7"
+  },
+  "devDependencies": {
+    "prisma": "^3.9.2"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   }
 }
