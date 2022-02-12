@@ -37,8 +37,14 @@ container-fluid{
 
 img{
 
-  /* box-shadow: inset 3px 3px 12px #0016a877; */
+  border-radius: 25px 25px 0px 0px;
+  box-shadow: inset 3px 3px 12px rgb(70, 70, 70);
   width: 175px;
+
+}
+
+img:hover{
+  transform: scale(0.93);
 }
 
 
