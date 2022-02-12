@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import React from "react";
+>>>>>>> 6740fb4927b34b7ebb25c6b20b3168959bb59f2b
 import "./App.css";
 import Nav from "./nav.js";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
+<<<<<<< HEAD
 import Login from "./Login";
 
 function App() {
@@ -18,6 +23,14 @@ function App() {
       .then((data) => setData(data.output));
   }, []);
 
+=======
+import {getData} from "../hooks/getData"
+
+
+function App() {
+  const {state, setState} = getData()
+  console.log(state)
+>>>>>>> 6740fb4927b34b7ebb25c6b20b3168959bb59f2b
 
   return (
     <main>

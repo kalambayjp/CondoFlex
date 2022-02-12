@@ -1,0 +1,166 @@
+const users = [
+  {
+  first_name: "Nat",
+  last_name: "Reynold",
+  email: "nreynold0@chronoengine.com",
+  password: "password",
+  phone_number: 8896157835,
+  unit_number: 7979,
+  building_code: 2001
+}, 
+{
+  first_name: "Elvina",
+  last_name: "Cescotti",
+  email: "ecescotti1@blogtalkradio.com",
+  password: "password",
+  phone_number: 6658605558,
+  unit_number: 6798,
+  building_code: 2003
+},
+ {
+  first_name: "Hansiain",
+  last_name: "Lambswood",
+  email: "hlambswood2@army.mil",
+  password: "password",
+  phone_number: 8189002856,
+  unit_number: 5518,
+  building_code: 2003
+}, {
+  first_name: "Ellene",
+  last_name: "Kerby",
+  email: "ekerby3@joomla.org",
+  password: "password",
+  phone_number: 8148111652,
+  unit_number: 3837,
+  building_code: 2002
+}, {
+  first_name: "Kitti",
+  last_name: "Tortoishell",
+  email: "ktortoishell4@eepurl.com",
+  password: "password",
+  phone_number: 1166835797,
+  unit_number: 3877,
+  building_code: 2003
+}, {
+  first_name: "Harrietta",
+  last_name: "Roiz",
+  email: "hroiz5@infoseek.co.jp",
+  password: "password",
+  phone_number: 4308735189,
+  unit_number: 1778,
+  building_code: 2001
+}, {
+  first_name: "Tilda",
+  last_name: "Adamczyk",
+  email: "tadamczyk6@ebay.com",
+  password: "password",
+  phone_number: 5022390563,
+  unit_number: 7640,
+  building_code: 2001
+}, {
+  first_name: "Bertrand",
+  last_name: "Cashin",
+  email: "bcashin7@whitehouse.gov",
+  password: "password",
+  phone_number: 9365417326,
+  unit_number: 6098,
+  building_code: 2000
+}, {
+  first_name: "Shandie",
+  last_name: "Sellman",
+  email: "ssellman8@gnu.org",
+  password: "password",
+  phone_number: 3714768726,
+  unit_number: 6949,
+  building_code: 2001
+}, {
+  first_name: "Francyne",
+  last_name: "Carlet",
+  email: "fcarlet9@yolasite.com",
+  password: "password",
+  phone_number: 1414282896,
+  unit_number: 0974,
+  building_code: 2002
+}, {
+  first_name: "Kellen",
+  last_name: "Lebel",
+  email: "klebela@aol.com",
+  password: "password",
+  phone_number: 1279890222,
+  unit_number: 7694,
+  building_code: 2000
+}, {
+  first_name: "Britney",
+  last_name: "Brigge",
+  email: "bbriggeb@discuz.net",
+  password: "password",
+  phone_number: 8488986295,
+  unit_number: 6996,
+  building_code: 2000
+}, {
+  first_name: "Mariejeanne",
+  last_name: "Dumberell",
+  email: "mdumberellc@wordpress.com",
+  password: "password",
+  phone_number: 3184414279,
+  unit_number: 4679,
+  building_code: 2003
+}, {
+  first_name: "Sherri",
+  last_name: "Ibarra",
+  email: "sibarrad@cbsnews.com",
+  password: "password",
+  phone_number: 7898529204,
+  unit_number: 9862,
+  building_code: 2002
+}, {
+  first_name: "Ichabod",
+  last_name: "Matisoff",
+  email: "imatisoffe@paginegialle.it",
+  password: "password",
+  phone_number: 8893714889,
+  unit_number: 4213,
+  building_code: 2002
+}, {
+  first_name: "Klarika",
+  last_name: "Glazer",
+  email: "kglazerf@washington.edu",
+  password: "password",
+  phone_number: 6806828070,
+  unit_number: 1938,
+  building_code: 2002
+}, {
+  first_name: "Romona",
+  last_name: "Jakubovits",
+  email: "rjakubovitsg@ifeng.com",
+  password: "password",
+  phone_number: 4768810956,
+  unit_number: 3249,
+  building_code: 2001
+}, {
+  first_name: "Kellen",
+  last_name: "Calvie",
+  email: "kcalvieh@google.ca",
+  password: "password",
+  phone_number: 7808940590,
+  unit_number: 4795,
+  building_code: 2001
+}, {
+  first_name: "Lenora",
+  last_name: "Taylor",
+  email: "ltaylori@princeton.edu",
+  password: "password",
+  phone_number: 3311113293,
+  unit_number: 0102,
+  building_code: 2003
+}, {
+  first_name: "Scarlet",
+  last_name: "O'Loughane",
+  email: "soloughanej@unicef.org",
+  password: "password",
+  phone_number: 1259972129,
+  unit_number: 2059,
+  building_code: 2000
+}]
+
+module.export = users
