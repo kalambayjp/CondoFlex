@@ -1,4 +1,45 @@
 nav {
-  opacity: 0.9;
+  /* opacity: 0.95; */
 }
+
+.navbar{
+  display: flex;
+background-color:  #ffd700;
+}
+
+container-fluid{
+
+}
+
+#btn_nav{
+  width: 30%;
+  height: 40px;
+  background:  rgb(70, 70, 70);
+  padding-left: 15px;
+  padding-right: 70px;
+  margin: 8px;
+  border-radius: 50px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  font-family: Roboto;
+  box-shadow: 4px 5px #88888871;
+}
+
+#btn_nav:hover{
+  background: rgb(2, 2, 73);
+  transition: 0.5s;
+  transform: scale(0.8);
+  align-content: center;
+  align-self: center;
+  box-shadow: 1px 1px #88888800;
+}
+
+img{
+
+  border-radius: 50px 50px 0px 0px;
+  /* box-shadow: inset 3px 3px 12px #0016a877; */
+  width: 175px;
+}
+
 
