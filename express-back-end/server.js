@@ -1,13 +1,8 @@
 const express = require('express');
 const App = express();
 const BodyParser = require('body-parser');
-<<<<<<< HEAD
-const PORT = 8090;
-const db = require('./queries')
-=======
 const { application } = require('express');
 const PORT = 8080;
->>>>>>> 6740fb4927b34b7ebb25c6b20b3168959bb59f2b
 
 // Express Configuration
 
@@ -31,25 +26,6 @@ App.use('/api/bookings', require("./routes/bookings"))
 
 
 
-<<<<<<< HEAD
-
-
-
-// Routes
-
-App.get('/users', db.getUsers)
-App.get('/users/:id', db.getUserById)
-App.post('/users', db.createUser)
-App.put('/users/:id', db.updateUser)
-App.delete('/users/:id', db.deleteUser)
-
-
-
-
-
-// Listen Server Port
-=======
->>>>>>> 6740fb4927b34b7ebb25c6b20b3168959bb59f2b
 
 App.listen(PORT, () => {
   console.log(`Express seems to be listening on port ${PORT} so that's pretty good 👍`);
