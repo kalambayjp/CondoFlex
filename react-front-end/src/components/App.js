@@ -4,6 +4,7 @@ import Nav from "./nav.js";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
+import Login from "./Login";
 import {getData} from "../hooks/getData"
 
 
@@ -33,9 +34,7 @@ function App() {
         </content>
 
         <div>
-          <p >
-            {!data ? "Loading..." : data.map(value => <div>Name: {value.fname} {value.lname}</div>)}
-          </p>
+
         </div>
 
       </div>
