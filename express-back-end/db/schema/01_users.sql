@@ -5,7 +5,7 @@ CREATE TABLE users (
   building_code VARCHAR(255) NOT NULL,
   fname VARCHAR(255) NOT NULL,
   lname VARCHAR(255) NOT NULL,
-  email TEXT,
+  email TEXT NOT NULL,
   password VARCHAR(255) NOT NULL,
   phone_number VARCHAR(255) NOT NULL,
   unit_number VARCHAR(40) NOT NULL,

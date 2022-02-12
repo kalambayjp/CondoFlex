@@ -1,21 +1,24 @@
 import React from "react";
+import axios from "axios";
 import "./nav.css";
+import logo from '../images/logo.png';
 
 function Nav(props) {
-  const {state, setState} = props;
+  const { state, setState } = props;
   return (
-    <nav class="navbar fixed-top navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          Logo
-        </a>
+    <nav className="navbar">
+      <div className="container-fluid">
+        <div className="logo">
+          <img src={logo} href="#" alt="Condo Flex" />
+        </div>
         <section>
-          <span class="navbar-brand" href="#">
+          <button id="btn_nav" onClick={() => setState("login")}>
             Login
-          </span>
-          <button class="navbar-brand" onClick={() => setState("register")}>
+          </button>
+          <button id="btn_nav" onClick={() => setState("register")}>
             Register
           </button>
+
         </section>
       </div>
     </nav>
