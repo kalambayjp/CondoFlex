@@ -8,13 +8,14 @@ import Login from "./Login";
 
 function App() {
   const [state, setState] = useState([]);
-
   const [data, setData] = React.useState(null);
 
+// Fetching Data from Server (http://localhost:8090/users)
+
   React.useEffect(() => {
-    fetch("/api/data")
+    fetch("/users")
       .then((res) => res.json())
-      .then((data) => setData(data.message));
+      .then((data) => setData(data.output));
   }, []);
 
 
@@ -38,13 +39,16 @@ function App() {
           {state === "register" && <Register />}
           {state === "login" && <Login />}
         </content>
-           <div>
-          <p >{!data ? "Loading..." : data}</p>
+
+        <div>
+          <p >
+            {!data ? "Loading..." : data.map(value => <div>Name: {value.fname} {value.lname}</div>)}
+          </p>
         </div>
-           
+
       </div>
       <br />
-    
+
       <Footer />
     </main>
   );
