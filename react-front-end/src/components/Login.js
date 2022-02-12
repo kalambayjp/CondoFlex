@@ -34,47 +34,49 @@ export default function Login() {
 
   return (
 
-      <div className="login_container">
-          <br/>
-          <h2>Login</h2>
-          <form onSubmit={submitLogin}>
-            <div className="login_email">
-              <label for="username" id="title_label">
-                <br/>
-                Email :
-              </label>
-              <br />
-              <input
-                className="input"
-                type="email"
-                email={email}
-                placeholder="ABC@gmail.com"
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </div>
+    <div className="login_container">
+      <br />
 
-            <div className="login_email">
-              <label for="password" id="title_label">
-                Password :
-              </label>
-              <br />
-              <input
-                className="input"
-                type="password"
-                password={password}
-                onChange={(event) => setPassword(event.target.value)}
-              />
-            </div>
+      <h2>Login</h2>
+
+      <form onSubmit={submitLogin}>
+        <div className="login_email">
+          <label for="username" id="title_label">
             <br />
+            Email :
+          </label>
+          <br />
+          <input
+            className="input"
+            type="email"
+            email={email}
+            placeholder="ABC@gmail.com"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </div>
 
-            <button type="submit" id="btn_submit">
-              Submit
-            </button>
-            
+        <div className="login_email">
+          <label for="password" id="title_label">
+            Password :
+          </label>
+          <br />
+          <input
+            className="input"
+            type="password"
+            password={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </div>
+        <br />
 
-            
-          </form>
-        
-      </div>
+        <button type="submit" id="btn_submit">
+          Submit
+        </button>
+
+
+
+      </form>
+
+    </div>
   );
 }
