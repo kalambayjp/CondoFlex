@@ -2,11 +2,13 @@ import React from "react";
 import "./register.css";
 
 function Register() {
-  return (
-    <div className="container">
+
+  return(
+     <div className="container">
       <br />
       <h6>Register</h6>
-      <form className="register">
+    
+    <form className="register" action="/register" method="post">
 
       <label for="First Name" id="title_label">
                 First Name :
