@@ -5,39 +5,42 @@ import Nav from "./nav.js";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
-import { useApplicationData } from "../hooks/useApplicationData";
-import AmenitiesList from "./AmenitiesList";
+import Login from "./Login";
+import {getData} from "../hooks/getData"
+
 
 function App() {
   const [state, setState] = useApplicationData();
 
   return (
     <main>
-      <Router>
-        <nav>
-          <Nav state={state} setState={setState} />
-        </nav>
-        <header>
-          <Header />
-        </header>
-        <div className="page-content">
-          <body></body>
 
-          <content>
-            <Routes>
-              <Route path="/register" exact element={<Register />} />
-              <Route
-                path="/:id/amenities"
-                exact
-                element={<AmenitiesList state={state} />}
-              />
-            </Routes>
-          </content>
+      <nav>
+        <Nav state={state} setState={setState} />
+      </nav>
+
+      <header>
+        <Header />
+      </header>
+
+      <div className="page-content">
+        <body></body>
+
+        <body>
+        </body>
+        <content>
+          {state === "register" && <Register />}
+          {state === "login" && <Login />}
+        </content>
+
+        <div>
+
         </div>
-        <footer className="bottom">
-          <Footer />
-        </footer>
-      </Router>
+
+      </div>
+      <br />
+
+      <Footer />
     </main>
   );
 }
