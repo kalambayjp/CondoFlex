@@ -8,5 +8,4 @@ router.get('/', async (req, res) => {
   res.json(bookingsData)
 })
 
-
 module.exports = router

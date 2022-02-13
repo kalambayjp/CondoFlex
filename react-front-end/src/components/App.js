@@ -4,12 +4,14 @@ import Nav from "./nav.js";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
-import {getData} from "../hooks/getData"
+import { useApplicationData } from "../hooks/useApplicationData";
+import AmenitiesList from "./AmenitiesList";
+
 
 
 function App() {
-  const {state, setState} = getData()
-  console.log(state)
+  const [state, setState] = useApplicationData();
+  
 
   return (
     <main>
@@ -25,8 +27,9 @@ function App() {
           <content>
             
 
-            {state === "register" && <Register />}
-          
+            {state.displayElement[state.displayElement.length - 1] === "register" && <Register />}
+            {state.displayElement[state.displayElement.length - 1] === "loggedIn" && <AmenitiesList state={state} />}
+            
             
           </content>
       </div>
