@@ -3,13 +3,12 @@ import axios from "axios";
 
 export function getData() {
   const [state, setState] = useState({
-    displayElement: ["register"],
     building: "",
-    buildings: [],
+    buildings: {},
     user: "",
-    users: [],
-    amenities: [],
-    bookings: []
+    users: {},
+    amenities: {},
+    bookings: {}
   });
 
   useEffect(() => {

@@ -8,8 +8,9 @@ import Login from "./Login";
 import { getData } from "../hooks/getData"
 
 
+
 function App() {
-  const { state, setState } = getData()
+  const {state, setState} = getData()
   console.log(state)
 
   return (
