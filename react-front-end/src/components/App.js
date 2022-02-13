@@ -5,11 +5,11 @@ import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
 import Login from "./Login";
-import {getData} from "../hooks/getData"
+import { getData } from "../hooks/getData"
 
 
 function App() {
-  const {state, setState} = getData()
+  const { state, setState } = getData()
   console.log(state)
 
   return (
@@ -29,8 +29,9 @@ function App() {
         <body>
         </body>
         <content>
-          {state === "register" && <Register />}
+          {state.displayElement[0] === "register" && <Register users = {state.users}/>}
           {state === "login" && <Login />}
+
         </content>
 
         <div>

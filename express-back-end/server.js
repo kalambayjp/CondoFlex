@@ -1,7 +1,6 @@
 const express = require('express');
 const App = express();
 const BodyParser = require('body-parser');
-const { application } = require('express');
 const PORT = 8090;
 
 // Express Configuration

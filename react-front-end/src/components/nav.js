@@ -3,6 +3,7 @@ import axios from "axios";
 import "./nav.css";
 import logo from '../images/logo.png';
 
+
 function Nav(props) {
   const { state, setState } = props;
   return (
@@ -12,9 +13,9 @@ function Nav(props) {
           Logo
         </a>
         <section>
-          <button id="btn_nav" onClick={() => setState("login")}>
+          {/* <button id="btn_nav" onClick={() => setState("login")}> */}
             Login
-          </button>
+          {/* </button> */}
           <button id="btn_nav" onClick={() => setState("register")}>
             Register
           </button>
