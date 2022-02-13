@@ -21,8 +21,8 @@ export function useApplicationData() {
       .then((all) => {
         setState(prev => ({...prev, 
           buildings: all[0].data,
-          users: all[1].data,
-          amenities: all[2].data,
+          amenities: all[1].data,
+          users: all[2].data,
           bookings: all[3].data
         }))
       })
