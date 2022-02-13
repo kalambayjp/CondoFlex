@@ -3,7 +3,6 @@ import axios from "axios";
 
 export function useApplicationData() {
   const [state, setState] = useState({
-    displayElement: ["loggedIn"],
     buildingId: "1", // HARD CODED DATA
     buildings: [],
     user: "",
