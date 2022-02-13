@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import axios from "axios";
 import "./nav.css";
 import logo from '../images/logo.png';
 
 function Nav(props) {
   const { state, setState } = props;
+  const [btnState, setBtnState]=useState()
   return (
     <nav class="navbar fixed-top navbar-light bg-light">
       <div className="container-fluid">
@@ -12,10 +13,10 @@ function Nav(props) {
           Logo
         </a>
         <section>
-          <button id="btn_nav" onClick={() => setState("login")}>
+          <button id="btn_nav" onClick={ setState("login")}>
             Login
           </button>
-          <button id="btn_nav" onClick={() => setState("register")}>
+          <button id="btn_nav" onClick={setState("register")}>
             Register
           </button>
 

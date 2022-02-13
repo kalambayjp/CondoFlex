@@ -10,7 +10,7 @@ import {getData} from "../hooks/getData"
 
 function App() {
   const {state, setState} = getData()
-  console.log(state)
+  console.log(setState)
 
   return (
     <main>

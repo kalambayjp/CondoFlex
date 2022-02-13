@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
 
+
 //For Login view
 export default function Login() {
   const [email, setEmail] = useState();
@@ -69,7 +70,7 @@ export default function Login() {
         </div>
         <br />
 
-        <button type="submit" id="btn_submit">
+        <button type="submit" id="btn_submit" onClick={submitLogin}>
           Submit
         </button>
 
