@@ -1,5 +1,5 @@
 const buildings = [
-  {
+   {
     building_code: 2000,
     name: "City Gardens",
     address: "698 CandleWood Lane",

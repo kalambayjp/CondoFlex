@@ -1,0 +1,33 @@
+.single-amenity {
+  width: 8em;
+  height: 10em;
+  display: flex;
+  flex-direction: row;
+}
+.container {
+  border-radius: 40px 0px;
+  background-color: #FFD700;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  width: 80%
+}
+
+.container:hover {
+  background-color: rgb(241, 151, 7);
+  box-shadow: 8px 8px rgba(21, 40, 180, 0.342);
+
+}
+
+
+img {
+  border-radius: 40px 0px;
+  box-shadow: inset 4px 4px rgba(21, 40, 180, 0.342);
+  width: 16em;
+  height: 18em;
+  float: left;
+  padding: 5px;
+  margin-right: 15px;
+}
+

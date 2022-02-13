@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function getData() {
+export function useApplicationData() {
   const [state, setState] = useState({
-    building: "",
-    buildings: {},
+    buildingId: "1", // HARD CODED DATA
+    buildings: [],
     user: "",
-    users: {},
-    amenities: {},
-    bookings: {}
+    users: [],
+    amenities: [],
+    bookings: []
   });
 
   useEffect(() => {
     Promise.all([                                        // Get requests to to assign data to state
-      axios.get("/api/buildings"),
-      axios.get("/api/amenities"),
-      axios.get("/api/users"),
-      axios.get("/api/bookings")
+      axios.get("http://localhost:8080/api/buildings"),
+      axios.get("http://localhost:8080/api/users"),
+      axios.get("http://localhost:8080/api/amenities"),
+      axios.get("http://localhost:8080/api/bookings")
     ])
       .then((all) => {
         setState(prev => ({...prev, 
@@ -30,7 +30,8 @@ export function getData() {
   }, [])
 
 
-  return {
-    state
-  }
+  return [
+    state,
+    setState
+  ]
 }

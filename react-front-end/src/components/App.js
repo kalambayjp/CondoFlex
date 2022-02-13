@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./nav.js";
 import Footer from "./footer";
@@ -9,8 +10,7 @@ import {getData} from "../hooks/getData"
 
 
 function App() {
-  const {state, setState} = getData()
-  console.log(state)
+  const [state, setState] = useApplicationData();
 
   return (
     <main>
