@@ -15,11 +15,7 @@ export function useApplicationData() {
     Promise.all([                                        // Get requests to to assign data to state
       axios.get("http://localhost:8080/api/buildings"),
       axios.get("http://localhost:8080/api/amenities"),
-<<<<<<< HEAD
       axios.get("http://localhost:8080/api/users"),      
-=======
-      axios.get("http://localhost:8080/api/users"),
->>>>>>> aa769475a0125f4666816204af85d2de8f3efcfa
       axios.get("http://localhost:8080/api/bookings")
     ])
       .then((all) => {
