@@ -6,8 +6,8 @@ import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
 import Login from "./Login";
-import { getData } from "../hooks/getData"
-
+import { useApplicationData } from "../hooks/useApplicationData"
+import AmenitiesList from "./AmenitiesList"
 
 
 function App() {
@@ -16,34 +16,44 @@ function App() {
   return (
     <main>
 
-      <nav>
-        <Nav state={state} setState={setState} />
-      </nav>
+      <Router >
 
-      <header>
-        <Header />
-      </header>
+        <nav>
+          <Nav state={state} setState={setState} />
+        </nav>
 
-      <div className="page-content">
-        <body></body>
+        <header>
+          <Header />
+        </header>
 
-        <body>
-        </body>
-        <content>
-          {state.displayElement[0] === "register" && <Register users = {state.users}/>}
-          {state === "login" && <Login />}
+        <div className="page-content">
+          <body></body>
 
-        </content>
+          <body>
+          </body>
+          <content>
+            <Routes>
+              <Route path="/register" exact element={<Register />} />
+              <Route
+                path="/:id/amenities"
+                exact
+                element={<AmenitiesList state={state} />}
+              />
+            </Routes>
 
-        <div>
+          </content>
+
+          <div>
+
+          </div>
 
         </div>
+        <br />
 
-      </div>
-      <br />
-
-      <Footer />
+        <Footer />
+      </Router>
     </main>
+
   );
 }
 
