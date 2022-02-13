@@ -6,8 +6,18 @@ function Register(props) {
 
   // const { users } = props
   // console.log(users);
-  const [formData, updateFormData] = useState("");
+  const [formData, updateFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    phone_number: "",
+    building_code: "",
+    unit_number: ""
+  });
+
   const [error, setError] = useState("");
+
 
   const handleChange = (e) => {
     updateFormData({
@@ -19,38 +29,14 @@ function Register(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData);
-    if (formData.first_name === "") {
-      setError("First name cannot be blank")
-      return;
-    }
-    if (formData.last_name === "") {
-      setError("Last name cannot be blank")
-      return;
-    }
-    if (formData.email === "") {
-      setError("Email cannot be blank")
-      return;
-    }
-    if (formData.password === "") {
-      setError("Password cannot be blank")
-      return;
-    }
-    if (formData.phone_number === "") {
-      setError("Phone number cannot be blank")
-      return;
-    }
-    if (formData.building_code === "") {
-      setError("Building code cannot be blank")
-      return;
-    }
-    if (formData.unit_number === "") {
-      setError("Unit Number cannot be blank")
-      return;
-    }
-    setError("")
+    if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_code && formData.unit_number) {
+      // ... submit to API or something
 
-    // ... submit to API or something
-    
+
+    } else {
+      setError("Field cannot be blank.")
+      return;
+    }
 
   };
 
@@ -61,91 +47,88 @@ function Register(props) {
       <br />
       <h6>Register</h6>
 
-      <form autoComplete="off" onSubmit={event => event.preventDefault()}>
+      <form autoComplete="off" onSubmit={handleSubmit}>
 
-        <label for="First Name" id="title_label">
-          First Name :
-        </label>
+        <label for="First Name" id="title_label">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         <input
           placeholder="First Name"
-          required
           type="text"
           name="first_name"
+          value={formData.first_name}
           onChange={handleChange}
+          required
 
-        />
+        /> <br />
 
-        <label for="Last Name" id="title_label">
-          Last Name :
-        </label>
+
+        <label for="Last Name" id="title_label">Last Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         <input
           placeholder="Last Name"
-          required
           type="text"
           name="last_name"
           onChange={handleChange}
+          value={formData.last_name}
+          required
 
-        />
+        />  <br />
 
-        <label for="Email" id="title_label">
-          Email :
-        </label>
+        <label for="Email" id="title_label">Email :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         <input
           placeholder="Email"
-          required
           type="text"
           name="email"
           onChange={handleChange}
+          value={formData.email}
+          required
 
-        />
+        />  <br />
 
-        <label for="Password" id="title_label">
-          Password :
-        </label>
+        <label for="Password" id="title_label">Password :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         <input
           type="password"
           placeholder="Password"
-          required
           name="password"
           onChange={handleChange}
+          value={formData.password}
+          required
 
-        />
+        />  <br />
 
-        <label for="Phone Number" id="title_label">
-          Phone Number :
-        </label>
+
+        <label for="Phone Number" id="title_label">Phone Number :&nbsp;</label>
         <input
           placeholder="Phone Number"
-          required
           type="text"
           name="phone_number"
           onChange={handleChange}
+          value={formData.phone_number}
+          required
 
-        />
+        />  <br />
 
-        <label for="Building Code" id="title_label">
-          Building Code :
-        </label>
+        <label for="Building Code" id="title_label">Building Code :&nbsp;&nbsp;</label>
         <input
           placeholder="Building Code"
-          required
           name="building_code"
           onChange={handleChange}
-        />
+          value={formData.building_code}
+          required
 
-        <label for="Unit Number" id="title_label">
-          Unit Number :
-        </label>
+        />  <br />
+
+        <label for="Unit Number" id="title_label">Unit Number :&nbsp;&nbsp;&nbsp;&nbsp;</label>
         <input
           placeholder="Unit Number"
-          required
           name="unit_number"
           onChange={handleChange}
-        />
+          value={formData.unit_number}
+          required
+
+        />  <br />
 
         <section className="registration_validation">{error}</section>
 
-        <button type="submit" id="btn_submit" onClick={handleSubmit}>
+        <button type="submit" id="btn_submit">
           Submit
         </button>
 
