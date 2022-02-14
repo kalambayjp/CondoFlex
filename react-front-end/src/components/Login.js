@@ -1,40 +1,37 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
-
+import { useNavigate } from "react-router-dom";
 
 //For Login view
-export default function login() {
+export default function login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [redirect, setRedirect] = useState(false);
+
+  let navigate = useNavigate();
+  console.log("Props", props);
+  let users = props.users || [];
+
+  console.log("Props", props);
 
   const submitLogin = async (event) => {
     event.preventDefault();
-    try {
-      let response = await axios({
-        method: "post",
-        url: `/login`,
-        data: {
-          email: email,
-          password: password,
-        },
-        withCredentials: true,
-      });
+    const found = users.find(
+      (element) => element.email === email && element.password === password
+    );
 
-      setRedirect(true);
-      return response;
-    } catch (error) {
-      console.log(error);
+    console.log("FOUND", found);
+    if (found) {
+      navigate(`/${found.building_code}/amenities`);
+      props.setState((prevState) => {
+        // Object.assign would also work
+        return { ...prevState, user: found };
+      });
     }
+    else{"Your Email or Password is Wrong"}
   };
 
-  if (redirect) {
-    return <redirect to="/home" />;
-  }
-
   return (
-
     <div className="login_container">
       <br />
 
@@ -70,14 +67,10 @@ export default function login() {
         </div>
         <br />
 
-        <button type="submit" id="btn_submit" onClick={submitLogin}>
+        <button type="submit" id="btn_submit">
           Submit
         </button>
-
-
-
       </form>
-
     </div>
   );
 }

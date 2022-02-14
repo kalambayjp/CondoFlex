@@ -13,6 +13,7 @@ container-fluid{
 
 #btn_nav{
   position: relative;
+  text-align: center;
   width: 30%;
   height: 40px;
   background:  rgb(70, 70, 70);
