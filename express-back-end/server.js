@@ -24,7 +24,7 @@ App.post('/login',(req, res) =>{
   console.log(req.body)
 })
 
-App.use(cors())
+// App.use(cors())
 
 
 
