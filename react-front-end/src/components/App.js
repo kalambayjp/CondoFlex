@@ -1,47 +1,60 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./nav.js";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
-import Login from "./Login";
-import {getData} from "../hooks/getData"
+import Login from "./login";
+import { useApplicationData } from "../hooks/useApplicationData"
+import AmenitiesList from "./AmenitiesList"
 
 
 function App() {
-  const {state, setState} = getData()
-  console.log(setState)
+  const [state, setState] = useApplicationData();
 
   return (
     <main>
 
-      <nav>
-        <Nav state={state} setState={setState} />
-      </nav>
+      <Router >
 
-      <header>
-        <Header />
-      </header>
+        <nav>
+          <Nav state={state} setState={setState} />
+        </nav>
 
-      <div className="page-content">
-        <body></body>
+        <header>
+          <Header />
+        </header>
 
-        <body>
-        </body>
-        <content>
-          {state === "register" && <Register />}
-          {state === "login" && <Login />}
-        </content>
+        <div className="page-content">
+          <body></body>
 
-        <div>
+          <body>
+          </body>
+          <content>
+            <Routes>
+              <Route path="/register" exact element={<Register />} />
+              <Route path="/login" exact element={<Login />} />
+              <Route
+                path="/:id/amenities"
+                exact
+                element={<AmenitiesList state={state} />}
+              />
+            </Routes>
+
+          </content>
+
+          <div>
+
+          </div>
 
         </div>
+        <br />
 
-      </div>
-      <br />
-
-      <Footer />
+        <Footer />
+      </Router>
     </main>
+
   );
 }
 

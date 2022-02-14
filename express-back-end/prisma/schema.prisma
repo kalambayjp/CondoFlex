@@ -45,8 +45,6 @@ model amenities {
   description String   @db.VarChar(255)
   image       String
   capacity    Int
-  open_time   Int
-  close_time  Int
 }
 
 model bookings {
