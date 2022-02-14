@@ -14,8 +14,13 @@ export function useApplicationData() {
   useEffect(() => {
     Promise.all([                                        // Get requests to to assign data to state
       axios.get("http://localhost:8080/api/buildings"),
+<<<<<<< HEAD
       axios.get("http://localhost:8080/api/amenities"),    
       axios.get("http://localhost:8080/api/users"),
+=======
+      axios.get("http://localhost:8080/api/amenities"),
+      axios.get("http://localhost:8080/api/users"),      
+>>>>>>> 098c89c29ed5694ca1aa2dced93e828ecb1e4c2a
       axios.get("http://localhost:8080/api/bookings")
     ])
       .then((all) => {
