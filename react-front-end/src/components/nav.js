@@ -1,8 +1,6 @@
 import React from "react";
-import axios from "axios";
 import "./nav.css";
-import logo from '../images/logo.png';
-
+import { Link } from "react-router-dom";
 
 function Nav(props) {
   const { state, setState } = props;
@@ -13,13 +11,17 @@ function Nav(props) {
           Logo
         </a>
         <section>
-          {/* <button id="btn_nav" onClick={() => setState("login")}> */}
-            Login
-          {/* </button> */}
-          <button id="btn_nav" onClick={() => setState("register")}>
+          <Link to="/login">
+            <button class="navbar-brand" href="#">
+              Login
+            </button>
+          </Link>
+          <Link to="/register">
+          <button class="navbar-brand" onClick={() => setState("register")}>
             Register
           </button>
-
+          </Link>
+          
         </section>
       </div>
     </nav>
