@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import "./amenitiesListItem.css";
+import "../styles/amenitiesListItem.css";
 
 function AmenityItem(props) {
   const {name, description, image, capacity} = props;

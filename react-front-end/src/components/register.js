@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./register.css";
+import "../styles/register.css";
 
 
 function Register(props) {
@@ -44,6 +44,7 @@ function Register(props) {
 
   return (
     <div className="container">
+      <br />
       <h6>Register</h6>
       <form autoComplete="off" onSubmit={handleSubmit}>
 

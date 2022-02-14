@@ -1,7 +1,7 @@
 import React from "react";
 import AmenityItem from "./AmenitiesListItem";
 import { getbuildingAmenities } from "./helpers";
-import "./amenitiesList.css";
+import "../styles/amenitiesList.css";
 
 function AmenitiesList(props) {
   const {state} = props;
