@@ -5,7 +5,7 @@ export function useApplicationData() {
   const [state, setState] = useState({
     buildingId: "1", // HARD CODED DATA
     buildings: [],
-    user: "",
+    user: undefined,
     users: [],
     amenities: [],
     bookings: [],
