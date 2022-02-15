@@ -17,11 +17,9 @@ function Nav(props) {
   const Logout = async () => {
     // props.state.user=""
     // state.user=("")
-    console.log("state user",state.user)
-    const user=""
+    console.log("state ",state)
+    const user=undefined
     setState({...state, user})
-
-    console.log("state user 2222",state.user)
     navigate(`/`);
 
   };
@@ -37,12 +35,12 @@ function Nav(props) {
             {!props.state.user ? (
               <>
                 <Link to="/login">
-                  <button id="btn_nav" onClick={() => setState("login")}>
+                  <button id="btn_nav" >
                     Login
                   </button>
                 </Link>
                 <Link to="/register">
-                  <button id="btn_nav" onClick={() => setState("register")}>
+                  <button id="btn_nav" >
                     Register
                   </button>
                 </Link>

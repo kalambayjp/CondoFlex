@@ -12,12 +12,10 @@ export default function login(props) {
   console.log("Props", props);
   let users = props.users || [];
 
-  console.log("Props", props);
+  console.log("Users", users);
 
   const submitLogin = async (event) => {
     event.preventDefault();
-    setEmail("");
-    setPassword("");
 
     const found = users.find(
       (element) => element.email === email && element.password === password
@@ -25,6 +23,8 @@ export default function login(props) {
 
     console.log("FOUND", found);
     if (found) {
+      setEmail("");
+      setPassword("");
       navigate(`/${found.building_code}/amenities`);
       props.setState((prevState) => {
         // Object.assign would also work

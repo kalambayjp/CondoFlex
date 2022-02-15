@@ -11,6 +11,7 @@ import AmenitiesList from "./AmenitiesList";
 
 function App() {
   const [state, setState] = useApplicationData();
+  console.log("state users A",state.users)
 
   return (
     <main>
