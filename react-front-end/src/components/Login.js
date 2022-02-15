@@ -3,34 +3,28 @@ import axios from "axios";
 import "../styles/Login.css";
 
 //For Login view
-export default function Login() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+export default function Login(props) {
+  const { state } = props;
+  const userDatabase = state.users;
+  console.log(userDatabase)
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  const submitLogin = async (event) => {
-    event.preventDefault();
-    try {
-      let response = await axios({
-        method: "post",
-        url: `/login`,
-        data: {
-          email: email,
-          password: password,
-        },
-        withCredentials: true,
-      });
 
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    var user = userDatabase.find(item => item.email === email && item.password === password);
+
+    if (user) {
       setRedirect(true);
-      return response;
-    } catch (error) {
-      console.log(error);
+      console.log({ user })
+      return <redirect to="/home" />;
     }
-  };
 
-  if (redirect) {
-    return <redirect to="/home" />;
-  }
+  };
 
   return (
 
@@ -39,9 +33,9 @@ export default function Login() {
 
       <h2>Login</h2>
 
-      <form onSubmit={submitLogin}>
+      <form onSubmit={handleSubmit}>
         <div className="login_email">
-          <label for="username" id="title_label">
+          <label for="email" id="title_label">
             <br />
             Email :
           </label>
@@ -49,9 +43,10 @@ export default function Login() {
           <input
             className="input"
             type="email"
-            email={email}
+            value={email}
             placeholder="ABC@gmail.com"
             onChange={(event) => setEmail(event.target.value)}
+            required
           />
         </div>
 
@@ -63,8 +58,10 @@ export default function Login() {
           <input
             className="input"
             type="password"
-            password={password}
+            value={password}
+            placeholder="Enter a password"
             onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </div>
         <br />
@@ -72,8 +69,6 @@ export default function Login() {
         <button type="submit" id="btn_submit">
           Submit
         </button>
-
-
 
       </form>
 

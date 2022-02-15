@@ -12,6 +12,7 @@ import AmenitiesList from "./AmenitiesList";
 function App() {
   const [state, setState] = useApplicationData();
 
+
   return (
     <main>
       <Router>
@@ -26,7 +27,7 @@ function App() {
 
           <content>
             <Routes>
-              <Route path="/login" exact element={<Login />} />
+              <Route path="/login" exact element={<Login state={state}/>} />
               <Route path="/register" exact element={<Register />} />
               <Route
                 path="/:id/amenities"
