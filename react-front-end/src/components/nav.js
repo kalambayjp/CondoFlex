@@ -9,13 +9,19 @@ import { useNavigate } from "react-router-dom";
 function Nav(props) {
   const { state, setState } = props;
   let navigate = useNavigate();
+  let user=props.user;
 
   // const [btnState, setBtnState]=useState()
-  console.log("state", state);
+  console.log("PPPPProp", props);
 
   const Logout = async () => {
+    // props.state.user=""
+    // state.user=("")
+    console.log("state user",state.user)
+    const user=""
+    setState({...state, user})
 
-    props.state.user=""
+    console.log("state user 2222",state.user)
     navigate(`/`);
 
   };
