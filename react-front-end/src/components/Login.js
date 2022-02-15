@@ -16,6 +16,9 @@ export default function login(props) {
 
   const submitLogin = async (event) => {
     event.preventDefault();
+    setEmail("");
+    setPassword("");
+
     const found = users.find(
       (element) => element.email === email && element.password === password
     );
@@ -28,7 +31,7 @@ export default function login(props) {
         return { ...prevState, user: found };
       });
     }
-    else{"Your Email or Password is Wrong"}
+    
   };
 
   return (
@@ -39,7 +42,7 @@ export default function login(props) {
 
       <form onSubmit={submitLogin}>
         <div className="login_email">
-          <label for="username" id="title_label">
+          <label for="email" id="title_label">
             <br />
             Email :
           </label>
@@ -47,9 +50,10 @@ export default function login(props) {
           <input
             className="input"
             type="email"
-            email={email}
+            value={email}
             placeholder="ABC@gmail.com"
             onChange={(event) => setEmail(event.target.value)}
+            required
           />
         </div>
 
@@ -61,8 +65,9 @@ export default function login(props) {
           <input
             className="input"
             type="password"
-            password={password}
+            value={password}
             onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </div>
         <br />

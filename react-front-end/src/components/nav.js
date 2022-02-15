@@ -14,7 +14,8 @@ function Nav(props) {
   console.log("state", state);
 
   const Logout = async () => {
-    props.state.user="";
+  
+    setState="";
     navigate(`/`);
 
   };

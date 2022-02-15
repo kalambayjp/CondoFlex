@@ -37,7 +37,6 @@ function App() {
                   <Login
                     users={state.users}
                     setState={setState}
-                    buildings={state.buildings}
                   />
                 }
               />
