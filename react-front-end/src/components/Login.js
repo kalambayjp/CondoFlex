@@ -1,39 +1,40 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
+import { useNavigate } from "react-router-dom";
 
 //For Login view
-export default function Login() {
+export default function login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [redirect, setRedirect] = useState(false);
+
+  let navigate = useNavigate();
+  console.log("Props", props);
+  let users = props.users || [];
+
+  console.log("Props", props);
 
   const submitLogin = async (event) => {
     event.preventDefault();
-    try {
-      let response = await axios({
-        method: "post",
-        url: `/login`,
-        data: {
-          email: email,
-          password: password,
-        },
-        withCredentials: true,
-      });
+    setEmail("");
+    setPassword("");
 
-      setRedirect(true);
-      return response;
-    } catch (error) {
-      console.log(error);
+    const found = users.find(
+      (element) => element.email === email && element.password === password
+    );
+
+    console.log("FOUND", found);
+    if (found) {
+      navigate(`/${found.building_code}/amenities`);
+      props.setState((prevState) => {
+        // Object.assign would also work
+        return { ...prevState, user: found };
+      });
     }
+    
   };
 
-  if (redirect) {
-    return <redirect to="/home" />;
-  }
-
   return (
-
     <div className="login_container">
       <br />
 
@@ -41,7 +42,7 @@ export default function Login() {
 
       <form onSubmit={submitLogin}>
         <div className="login_email">
-          <label for="username" id="title_label">
+          <label for="email" id="title_label">
             <br />
             Email :
           </label>
@@ -49,9 +50,10 @@ export default function Login() {
           <input
             className="input"
             type="email"
-            email={email}
+            value={email}
             placeholder="ABC@gmail.com"
             onChange={(event) => setEmail(event.target.value)}
+            required
           />
         </div>
 
@@ -63,8 +65,9 @@ export default function Login() {
           <input
             className="input"
             type="password"
-            password={password}
+            value={password}
             onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </div>
         <br />
@@ -72,11 +75,7 @@ export default function Login() {
         <button type="submit" id="btn_submit">
           Submit
         </button>
-
-
-
       </form>
-
     </div>
   );
 }

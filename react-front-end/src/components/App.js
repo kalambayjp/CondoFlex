@@ -6,18 +6,15 @@ import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
 import Login from "./Login";
-import { useApplicationData } from "../hooks/useApplicationData"
-import AmenitiesList from "./AmenitiesList"
-
+import { useApplicationData } from "../hooks/useApplicationData";
+import AmenitiesList from "./AmenitiesList";
 
 function App() {
   const [state, setState] = useApplicationData();
 
   return (
     <main>
-
-      <Router >
-
+      <Router>
         <nav>
           <Nav state={state} setState={setState} />
         </nav>
@@ -29,31 +26,35 @@ function App() {
         <div className="page-content">
           <body></body>
 
-          <body>
-          </body>
+          <body></body>
           <content>
             <Routes>
               <Route path="/register" exact element={<Register />} />
+              <Route
+                path="/login"
+                exact
+                element={
+                  <Login
+                    users={state.users}
+                    setState={setState}
+                  />
+                }
+              />
               <Route
                 path="/:id/amenities"
                 exact
                 element={<AmenitiesList state={state} />}
               />
             </Routes>
-
           </content>
 
-          <div>
-
-          </div>
-
+          <div></div>
         </div>
         <br />
 
         <Footer />
       </Router>
     </main>
-
   );
 }
 
