@@ -43,7 +43,7 @@ function Register(props) {
 
 
   return (
-    <div className="container">
+    <div className="register-container">
       <br />
       <h6>Register</h6>
       <form autoComplete="off" onSubmit={handleSubmit}>

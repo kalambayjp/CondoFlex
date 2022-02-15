@@ -1,14 +1,16 @@
 const express = require('express');
 const App = express();
 const BodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+const { application } = require('express');
 const PORT = 8080;
+var cors = require('cors')
 
 // Express Configuration
-App.use(BodyParser.urlencoded({ extended: false }));
+
+App.use(cors())
+App.use(BodyParser.urlencoded({ extended: true }));
 App.use(BodyParser.json());
 App.use(express.static('public'));
-App.use(cookieParser());
 var cors = require('cors');
 
 
@@ -19,6 +21,12 @@ App.get("/", (req, res) => {
   console.log('Cookies: ', req.cookies);
   console.log('Signed Cookies: ', req.signedCookies);
 })
+//login
+App.post('/login',(req, res) =>{
+  console.log(req.body)
+})
+
+// App.use(cors())
 
 App.use(cors())
 
