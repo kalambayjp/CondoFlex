@@ -3,10 +3,12 @@ import React from "react";
 import "./amenitiesListItem.css";
 
 function AmenityItem(props) {
-  const { name, description, image, capacity } = props;
 
-  return (
-    <div className="container">
+  const {name, description, image, capacity, setSelectedAmenity, id} = props;
+
+  return(
+    <div className="container" onClick={() => setSelectedAmenity(id)}>
+
       <article className="single-amenitiy">
         <div id="image">
         <img src={image} />

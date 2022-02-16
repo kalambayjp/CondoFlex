@@ -4,8 +4,10 @@ main {
   justify-content: space-between;
   
 }
+
 body {
   background-image: url("https://images.pexels.com/photos/7095765/pexels-photo-7095765.jpeg?cs=srgb&dl=pexels-john-lee-7095765.jpg&fm=jpg");
+
   
   background-repeat: no-repeat;
   background-size: cover;
