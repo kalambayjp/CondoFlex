@@ -48,11 +48,11 @@ h2 {
   font-family: Roboto;
 }
 
-#btn_submit{
+#btn_submit {
   align-self: center;
   width: 40%;
   height: 50px;
-  background:  rgb(70, 70, 70);
+  background: rgb(70, 70, 70);
   border-radius: 50px;
   transition: 0.5s;
   font-size: 20px;
@@ -71,6 +71,74 @@ h2 {
   box-shadow: 1px 1px #88888800;
 }
 
-
 .login_email {
+}
+
+@media only screen and (max-width: 800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+    display: flex;
+ 
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  /* For mobile phones: */
+  .menu,
+  .main {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .login_container {
+    position: relative;
+    left: 9px;
+    justify-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #ffd700;
+    border-radius: 50px 0px;
+    margin-right: 20px;
+    padding: 20px;
+    font-family: Roboto;
+    box-shadow: 6px 6px rgba(21, 40, 180, 0.342);
+  }
+  form {
+  
+    justify-content: center;
+    align-content: center;
+  }
+
+  #btn_submit {
+    align-self: center;
+    width: 40%;
+    height: 40px;
+    background: rgb(70, 70, 70);
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 2px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    font-family: Roboto;
+    box-shadow: 4px 5px #88888871;
+  }
+
+  #btn_submit:hover {
+    background: rgb(2, 2, 73);
+    transition: 0.5s;
+    transform: scale(0.8);
+    align-content: center;
+    align-self: center;
+    box-shadow: 1px 1px #88888800;
+  }
+  #title_label {
+    position: relative;
+    float: left;
+    color: rgb(21, 39, 180);
+    font-family: Roboto;
+  }
 }

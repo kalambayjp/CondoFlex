@@ -4,7 +4,7 @@ nav {
 
 .navbar{
   display: flex;
-background-color:  #ffd700;
+ background-color:#ffd700;
 }
 
 container-fluid{
@@ -12,17 +12,17 @@ container-fluid{
 }
 
 #btn_nav{
-  position: relative;
+  position:relative;
+  left: 75px;
   text-align: center;
   width: 30%;
-  height: 40px;
+  height: 35px;
   background:  rgb(70, 70, 70);
-  padding-left: 15px;
   padding-right: 60px;
+  margin: 10px;
   float: left;
-  margin: 8px;
   border-radius: 50px;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   border: none;
   font-family: Roboto;
@@ -38,7 +38,7 @@ container-fluid{
   box-shadow: 1px 1px #88888800;
 }
 
-.logo img{
+#logo img{
 
   border-radius: 40px 40px 0px 0px;
   box-shadow: inset 3px 3px 9px rgb(70, 70, 70);
@@ -51,6 +51,100 @@ container-fluid{
 img:hover{
   transform: scale(0.93);
   opacity: 0.75; 
+}
+
+@media only screen and (max-width:1000px) {
+  #btn_nav{
+    left: 75px;
+    text-align: center;
+    width: 30%;
+    height: 35px;
+    background:  rgb(70, 70, 70);
+    padding-left: 15px;
+    padding-right: 60px;
+    float: left;
+    margin: 8px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    font-family: Roboto;
+    box-shadow: 4px 5px #88888871;
+  }
+  #btn_nav:hover{
+    background: rgb(2, 2, 73);
+    transition: 0.5s;
+    transform: scale(0.8);
+    align-content: center;
+    align-self: center;
+    box-shadow: 1px 1px #88888800;
+  }
+
+  #logo img{
+
+    
+    border-radius: 40px 40px 0px 0px;
+    box-shadow: inset 3px 3px 9px rgb(70, 70, 70);
+    width: 150px;
+    height: 60px;
+    opacity: 0.95; 
+  
+  }
+  img:hover{
+    transform: scale(0.93);
+    opacity: 0.75; 
+  }
+
+}
+
+@media screen and (max-width:500px) {
+
+  .navbar{
+    width: 110%;
+    display: flex;
+   background-color:#ffd700;
+  }
+
+  #btn_nav{
+    left: 74px;
+    text-align: center;
+    width: 30%;
+    height: 35px;
+    background:  rgb(70, 70, 70);
+    padding-left: 15px;
+    padding-right: 60px;
+    float: left;
+    margin: 8px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    font-family: Roboto;
+    box-shadow: 4px 5px #88888871;
+  }
+  #btn_nav:hover{
+    background: rgb(2, 2, 73);
+    transition: 0.5s;
+    transform: scale(0.8);
+    align-content: center;
+    align-self: center;
+    box-shadow: 1px 1px #88888800;
+  }
+
+  #logo img{
+    position: relative;
+    left: 70%;
+    border-radius: 40px 40px 0px 0px;
+    box-shadow: inset 3px 3px 9px rgb(70, 70, 70);
+    width: 150px;
+    height: 60px;
+    opacity: 0.95; 
+  
+  }
+  img:hover{
+    transform: scale(0.93);
+    opacity: 0.75; 
+  }
 }
 
 
