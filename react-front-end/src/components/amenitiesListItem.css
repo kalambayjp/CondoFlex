@@ -46,7 +46,7 @@ h6{
   color: #ffd700;
 }
 
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width:1200px) {
   /* For tablets: */
   /* .main {
     width: 100%;
@@ -97,7 +97,7 @@ h6{
 
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:900px) {
   /* For mobile phones: */
   .menu, .main, .right {
     width: 100%;
@@ -136,6 +136,24 @@ h6{
     background-color: rgb(241, 151, 7);
     box-shadow: 8px 8px rgba(21, 40, 180, 0.342);
   
+  }
+  .amenity-info p{
+    font-size: 11px;
+  }
+  
+  h6{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-color: rgb(70, 70, 70);
+    box-shadow: inset 0 0 10px #221d04;
+    width: 114.6%;
+    right: 20px;
+    height: 35px;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 30px;
+    color: #ffd700;
   }
 
 
