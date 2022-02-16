@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "../styles/register.css";
 
 
@@ -31,7 +32,12 @@ function Register(props) {
     console.log(formData);
     if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_code && formData.unit_number) {
       // ... submit to API or something
-
+      axios
+      .post('http://localhost:8080/register', formData)
+      .then(() => console.log('User Created'))
+      .catch(err => {
+        console.error(err);
+      });    
 
     } else {
       setError("Field cannot be blank.")
