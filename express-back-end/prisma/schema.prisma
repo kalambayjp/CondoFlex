@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
@@ -57,6 +58,6 @@ model bookings {
   amenity_id Int
 
   number_of_ppl Int
-  start_time    Int
-  end_time      Int
+  start_time    String
+  end_time      String
 }
