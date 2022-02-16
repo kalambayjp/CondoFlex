@@ -11,12 +11,10 @@ function Nav(props) {
   let navigate = useNavigate();
   let user=props.user;
 
-  // const [btnState, setBtnState]=useState()
   console.log("PPPPProp", props);
 
   const Logout = async () => {
-    // props.state.user=""
-    // state.user=("")
+  
     console.log("state ",state)
     const user=undefined
     setState({...state, user})
