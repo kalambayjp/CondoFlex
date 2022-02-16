@@ -3,20 +3,20 @@ import React from "react";
 import "./amenitiesListItem.css";
 
 function AmenityItem(props) {
-  const {name, description, image, capacity} = props;
+  const { name, description, image, capacity } = props;
 
-  return(
+  return (
     <div className="container">
       <article className="single-amenitiy">
+        <div id="image">
         <img src={image} />
+        </div>
         <div className="amenity-info">
           <h6>{name}</h6>
           <p>{`${description} Capacity per timeslot: ${capacity}`}</p>
         </div>
-        
-
       </article>
     </div>
-  )
+  );
 }
-export default AmenityItem
+export default AmenityItem;

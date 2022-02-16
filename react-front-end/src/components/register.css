@@ -40,7 +40,8 @@ h6{
   height: 60px;
   align-items: center;
   font-family: Roboto;
-  font-size: 40px;
+  padding: 10px;
+  font-size: 30px;
   color: #ffd700;
 }
 

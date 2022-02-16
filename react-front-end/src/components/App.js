@@ -8,12 +8,15 @@ import Register from "./register";
 import Login from "./Login";
 import { useApplicationData } from "../hooks/useApplicationData";
 import AmenitiesList from "./AmenitiesList";
+import { CookiesProvider } from "react-cookie";
+
 
 function App() {
   const [state, setState] = useApplicationData();
   console.log("state users A",state.users)
 
   return (
+    <CookiesProvider>
     <main>
       <Router>
         <nav>
@@ -55,7 +58,9 @@ function App() {
 
         <Footer />
       </Router>
+    
     </main>
+    </CookiesProvider>
   );
 }
 
