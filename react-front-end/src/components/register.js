@@ -4,6 +4,9 @@ import "../styles/register.css";
 import { useNavigate } from "react-router-dom";
 
 function Register(props) {
+
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
   const [formData, updateFormData] = useState({
     first_name: "",
     last_name: "",
@@ -13,10 +16,6 @@ function Register(props) {
     unit_number: "",
     building_code: ""
   });
-
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-
 
   const handleChange = (e) => {
     updateFormData({
@@ -30,7 +29,7 @@ function Register(props) {
     console.log(formData);
     if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_code && formData.unit_number) {
       axios
-        .post('http://localhost:8080/api/users/create', { formData })
+        .post('http://localhost:8080/api/users/register', { formData })
         .then((res) => {
           const {
             data: { userCreated, userId },
@@ -42,7 +41,7 @@ function Register(props) {
             console.log(userId);
             navigate(`/login`);
           } else {
-            alert("Please enter correct login information");
+            setError("Please enter correct user information");
             return navigate(`/register`);
           }
         })

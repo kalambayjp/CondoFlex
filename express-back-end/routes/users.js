@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { PrismaClient, Prisma  } = require("@prisma/client");
+const { PrismaClient, Prisma } = require("@prisma/client");
 const { users } = new PrismaClient();
 const BodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
@@ -56,10 +56,10 @@ router.post('/login', async (req, res) => {
 })
 
 
-//Register 
+//----------------------------- Register Start ------------------------------------------------------------------
 
 
-router.post('/create', async (req, res) => {
+router.post('/register', async (req, res) => {
   console.log("Register Data:", req.body.formData)
   const { first_name, last_name, email, password, phone_number, unit_number, building_code } = req.body.formData
 
@@ -70,6 +70,8 @@ router.post('/create', async (req, res) => {
   const phoneNumber = Number.parseInt(phone_number);
   const unitNumber = Number.parseInt(unit_number);
   const buildingCode = Number.parseInt(building_code);
+  let userCreated = "";
+  let userId = 0;
 
   try {
     await users.create({
@@ -94,9 +96,6 @@ router.post('/create', async (req, res) => {
     throw e
   }
 
-  let userCreated = "";
-  let userId = 0;
-
   const usersData = await users.findUnique({
     where: {
       email: userEmail,
@@ -116,6 +115,7 @@ router.post('/create', async (req, res) => {
 
 })
 
+//----------------------------- Register End ------------------------------------------------------------------
 
 
 
