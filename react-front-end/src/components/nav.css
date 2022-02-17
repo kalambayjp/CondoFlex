@@ -4,6 +4,7 @@ nav {
 
 .navbar{
   display: flex;
+  width: 100%;
  background-color:#ffd700;
 }
 
@@ -100,8 +101,7 @@ img:hover{
 @media screen and (max-width:500px) {
 
   .navbar{
-    width: 110%;
-    display: flex;
+    width: 120%;
    background-color:#ffd700;
   }
 

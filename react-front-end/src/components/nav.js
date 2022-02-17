@@ -8,26 +8,26 @@ import { useNavigate } from "react-router-dom";
 function Nav(props) {
   const { state, setState } = props;
   let navigate = useNavigate();
-  let user = props.user;
 
   console.log("PPPPProp", props);
 
   const Logout = async () => {
-    console.log("state ", state);
     const user = undefined;
     setState({ ...state, user });
+    localStorage.clear();
     navigate(`/`);
   };
 
   return (
-    <nav class="navbar">
+
+    <nav className="navbar">
       <div className="container-fluid">
         <div id="logo">
-          <img src={logo} href="#" alt="Condo Flex" />
+          <img src={logo} href="/home" alt="Condo Flex" />
         </div>
         <section>
           <div>
-            {!props.state.user ? (
+            {!localStorage.getItem("name") ? (
               <>
                 <Link to="/login">
                   <button id="btn_nav">Login</button>

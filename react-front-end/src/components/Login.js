@@ -2,11 +2,29 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
+=======
+import { useCookies } from "react-cookie";
+import Popup from "./PopUp";
+>>>>>>> main
 
 //For Login view
 export default function login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+<<<<<<< HEAD
+=======
+  // const [cookies, setCookie] = useCookies(["user"]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [formDetails, setFormDetails] = useState({
+    email: "",
+    password: "",
+  });
+>>>>>>> main
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   let navigate = useNavigate();
   console.log("Props", props);
@@ -14,12 +32,47 @@ export default function login(props) {
 
   console.log("Users", users);
 
+<<<<<<< HEAD
   const submitLogin = async (event) => {
     event.preventDefault();
 
     const found = users.find(
       (element) => element.email === email && element.password === password
     );
+=======
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const password = e.target.value;
+    setFormDetails({ ...formDetails, [name]: password });
+  };
+
+  const submitLogin = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8080/api/users/login", { formDetails })
+      .then((res) => {
+        const { data: allData } = res;
+        const {
+          data: { Logged, building_code, first_name },
+        } = res;
+        console.log("RESPONSE", res.data);
+
+        // If successfully logged IN.
+
+        if (Logged === "Successful") {
+          // setCookie('Name', first_name, { path: '/' });
+          localStorage.setItem("name", first_name);
+          navigate(`/${building_code}/amenities`);
+          props.setState((prevState) => {
+            // Object.assign would also work
+            return { ...prevState, user: allData };
+          });
+        } else {
+          setIsOpen(!isOpen);
+          // return  navigate(`/register`);
+        }
+      });
+>>>>>>> main
 
     console.log("FOUND", found);
     if (found) {
@@ -70,6 +123,19 @@ export default function login(props) {
             required
           />
         </div>
+        <div>
+          {isOpen && (
+            <Popup
+              content={
+                <>
+                  <b>Wrong password or email. Please try again!</b>
+                </>
+              }
+              handleClose={togglePopup}
+            />
+          )}
+        </div>
+
         <br />
 
         <button type="submit" id="btn_submit">

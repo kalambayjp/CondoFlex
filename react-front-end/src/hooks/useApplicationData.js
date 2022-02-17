@@ -11,25 +11,32 @@ export function useApplicationData() {
     bookings: [],
   });
 
-  useEffect(() => {
-    Promise.all([
+  const getDataFromBackend = async () => {
+  console.log("AAAAAAAAAABBBBBCCCC")
+    return Promise.all([
       // Get requests to to assign data to state
       axios.get("http://localhost:8080/api/buildings"),
-      axios.get("http://localhost:8080/api/amenities"),
       axios.get("http://localhost:8080/api/users"),
-      axios.get("http://localhost:8080/api/bookings"),
+      axios.get("http://localhost:8080/api/amenities"),
+      // axios.get("http://localhost:8080/api/bookings"),
+
     ])
       .then((all) => {
+        console.log("USEAPPPPPPP",all)
         setState((prev) => ({
           ...prev,
           buildings: all[0].data,
-          amenities: all[1].data,
-          users: all[2].data,
-          bookings: all[3].data,
+          users: all[1].data,
+          amenities: all[2].data,
+          // bookings: all[3].data,
         }));
       })
-      .catch((err) => console.log(err));
-  }, []);
+      .catch((err) => console.log("ERRORRRR",err));
 
-  return [state, setState];
+      
+  };
+
+  console.log("STATEEEEE",state)
+  return {state, setState, getDataFromBackend}; 
+
 }

@@ -1,0 +1,10 @@
+.display-time {
+  background-color: yellow;
+
+}
+.display-time:hover{
+  background-color: gray;
+}
+.selected {
+  background-color: rgb(218, 17, 17);
+}

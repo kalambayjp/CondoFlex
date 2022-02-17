@@ -1,8 +1,7 @@
 .single-amenity {
   width: auto;
-  height: auto;
   display: flex;
-  flex-direction: row;
+
 }
 .container {
   border-radius: 40px 0px;
@@ -11,7 +10,8 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
-  width: 80%
+  width: 80%;
+  height:100%;
 }
 
 .container:hover {

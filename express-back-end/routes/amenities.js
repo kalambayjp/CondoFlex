@@ -8,5 +8,24 @@ router.get('/', async (req, res) => {
   res.json(amenityData)
 })
 
+router.get('/capacity', async (req, res) => {
+  const {amenityId} = req.query;
+  // console.log(req.body)
+ try { const amenityData = await amenities.findUnique({
+    where: {
+      id: parseInt(amenityId)
+    },
+    select: {
+      capacity: true
+    }
+    
+  });
+
+  res.json(amenityData)
+} catch(err) {
+  console.log(err)
+}
+})
+
 
 module.exports = router
