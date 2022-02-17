@@ -3,6 +3,7 @@ import axios from "axios";
 export function getbuildingAmenities(state, buildingId) {
   
   const buildingAmenities = state.amenities.filter(amenity => amenity.building_id === parseInt(buildingId));
+  console.log("\n ABBBBBBUUUILLLDDDINNNNGGGG \n",buildingAmenities)
 
   return buildingAmenities;
 }
