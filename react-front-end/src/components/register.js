@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./register.css";
+import axios from "axios";
+import "../styles/register.css";
 
 
 function Register(props) {
@@ -31,7 +32,12 @@ function Register(props) {
     console.log(formData);
     if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_code && formData.unit_number) {
       // ... submit to API or something
-
+      axios
+      .post('http://localhost:8080/register', formData)
+      .then(() => console.log('User Created'))
+      .catch(err => {
+        console.error(err);
+      });    
 
     } else {
       setError("Field cannot be blank.")
@@ -46,10 +52,9 @@ function Register(props) {
     <div className="register-container">
       <br />
       <h6>Register</h6>
-
       <form autoComplete="off" onSubmit={handleSubmit}>
 
-        <label for="First Name" id="title_label">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label for="First Name" id="title_label">First Name:</label>
         <input
           placeholder="First Name"
           type="text"
@@ -61,7 +66,7 @@ function Register(props) {
         /> <br />
 
 
-        <label for="Last Name" id="title_label">Last Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label for="Last Name" id="title_label">Last Name :</label>
         <input
           placeholder="Last Name"
           type="text"
@@ -72,7 +77,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Email" id="title_label">Email :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label for="Email" id="title_label">Email :</label>
         <input
           placeholder="Email"
           type="text"
@@ -83,7 +88,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Password" id="title_label">Password :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label for="Password" id="title_label">Password :</label>
         <input
           type="password"
           placeholder="Password"
@@ -95,7 +100,7 @@ function Register(props) {
         />  <br />
 
 
-        <label for="Phone Number" id="title_label">Phone Number :&nbsp;</label>
+        <label for="Phone Number" id="title_label">Phone Number :</label>
         <input
           placeholder="Phone Number"
           type="text"
@@ -106,7 +111,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Building Code" id="title_label">Building Code :&nbsp;&nbsp;</label>
+        <label for="Building Code" id="title_label">Building Code :</label>
         <input
           placeholder="Building Code"
           name="building_code"
@@ -116,7 +121,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Unit Number" id="title_label">Unit Number :&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label for="Unit Number" id="title_label">Unit Number :</label>
         <input
           placeholder="Unit Number"
           name="unit_number"

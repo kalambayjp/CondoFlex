@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
   }
 
   // console.log("USERDATAAAAAA",usersData)
-  res.json({firststname: first_name,building_code: building_code, Logged:Logged });
+  res.json({first_name: first_name,building_code: building_code, Logged:Logged });
   
 })
 
