@@ -12,15 +12,12 @@ import Popup from "./PopUp";
 export default function login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-<<<<<<< HEAD
-=======
   // const [cookies, setCookie] = useCookies(["user"]);
   const [isOpen, setIsOpen] = useState(false);
   const [formDetails, setFormDetails] = useState({
     email: "",
     password: "",
   });
->>>>>>> main
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -32,14 +29,6 @@ export default function login(props) {
 
   console.log("Users", users);
 
-<<<<<<< HEAD
-  const submitLogin = async (event) => {
-    event.preventDefault();
-
-    const found = users.find(
-      (element) => element.email === email && element.password === password
-    );
-=======
   const handleChange = (e) => {
     const name = e.target.name;
     const password = e.target.value;
@@ -72,7 +61,6 @@ export default function login(props) {
           // return  navigate(`/register`);
         }
       });
->>>>>>> main
 
     console.log("FOUND", found);
     if (found) {
