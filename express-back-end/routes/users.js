@@ -11,6 +11,11 @@ App.use(cors());
 App.use(BodyParser.urlencoded({ extended: true }));
 App.use(BodyParser.json());
 App.use(express.static('public'));
+App.use(cookieSession({
+  name:"session",
+  keys:["key1","key2"]
+}))
+
 
 
 router.get('/', async (req, res) => {
@@ -43,7 +48,9 @@ router.post('/login', async (req, res) => {
     building_code = usersData.building_code;
     // console.log("RRREQQQSESSION",req.session.user_id)
     Logged="Successful";
+    console.log("FIRSTTTTTNAMEEEE",first_name)
     console.log("Valid")
+    // req.session["name"]="first_name"
   }
   else{
     Logged="Unsuccessful";
