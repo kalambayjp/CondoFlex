@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./nav.js";
+import Nav from "./nav";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
@@ -21,7 +21,7 @@ function App() {
   }, []);
  
   return (
-    <main>
+    <main className="background">
       <Router>
         <nav>
           <Nav state={state} setState={setState} />
@@ -30,9 +30,9 @@ function App() {
           <Header />
         </header>
         <div className="page-content">
-          <body></body>
+          <div className="background"></div>
 
-          <content>
+          <div>
             <Routes>
               <Route path="/register" exact element={<Register />} />
 
@@ -54,7 +54,7 @@ function App() {
               />} />
 
             </Routes>
-          </content>
+          </div>
         </div>
         <footer className="bottom">
           <Footer />

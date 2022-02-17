@@ -37,11 +37,32 @@ router.get('/', async (req, res) => {
 
 
 
-router.get('/', async (req, res) => {
-  const bookingsData = await bookings.findMany();
+// router.get('/', async (req, res) => {
+//   const bookingsData = await bookings.findMany();
 
-  res.json(bookingsData)
+//   res.json(bookingsData)
+// })
+
+router.post('/', async (req, res) => {
+  const { userId, amenityId, numOfPpl, startTime } = req.query;
+
+  try {const bookingsData = await bookings.create({
+    data: {
+      user_id: parseInt(userId),
+      amenity_id: parseInt(amenityId),
+      number_of_ppl: parseInt(numOfPpl),
+      start_time: startTime,
+    }})
+
+    res.json(bookingsData)
+
+  } catch(err) {
+    console.log(err)
+  }
+
 })
+
+
 
 
 module.exports = router

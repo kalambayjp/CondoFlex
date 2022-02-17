@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./nav.css";
 import { Link } from "react-router-dom";
 
 function Nav(props) {
-  const { state, setState } = props;
+  const { setState } = props;
   return (
     <nav className="navbar fixed-top navbar-light bg-light">
       <div className="container-fluid">
