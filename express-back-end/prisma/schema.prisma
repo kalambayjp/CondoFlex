@@ -11,6 +11,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// phone_number should be bigInt / String instead of Int
+
 model users {
   id       Int        @id @default(autoincrement())
   bookings bookings[]
