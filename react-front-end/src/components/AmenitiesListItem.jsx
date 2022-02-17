@@ -7,6 +7,7 @@ export default function AmenityItem(props) {
 
   return(
     <div className="container" onClick={() => setSelectedAmenity(id)}>
+
       <article className="single-amenitiy">
 
         <img src={image} />
@@ -18,5 +19,5 @@ export default function AmenityItem(props) {
         
       </article>
     </div>
-  )
+  );
 }

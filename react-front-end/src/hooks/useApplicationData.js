@@ -5,18 +5,20 @@ export function useApplicationData() {
   const [state, setState] = useState({
     buildingId: "1", // HARD CODED DATA
     buildings: [],
-    user: "",
+    user: undefined,
     users: [],
     amenities: [],
     bookings: [],
   });
+
   const getDataFromBackend = async () => {
     return Promise.all([
       // Get requests to to assign data to state
       axios.get("http://localhost:8080/api/buildings"),
-      axios.get("http://localhost:8080/api/users"),
+        axios.get("http://localhost:8080/api/users"),
       axios.get("http://localhost:8080/api/amenities"),
-      // axios.get("http://localhost:8080/api/bookings"),
+      axios.get("http://localhost:8080/api/bookings"),
+
     ])
       .then((all) => {
         
@@ -33,4 +35,5 @@ export function useApplicationData() {
 
 
   return {state, setState, getDataFromBackend}; 
+
 }
