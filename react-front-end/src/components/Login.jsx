@@ -59,16 +59,16 @@ export default function login(props) {
         }
       });
 
-    console.log("FOUND", found);
-    if (found) {
-      setEmail("");
-      setPassword("");
-      navigate(`/${found.building_code}/amenities`);
-      props.setState((prevState) => {
-        // Object.assign would also work
-        return { ...prevState, user: found };
-      });
-    }
+    // console.log("FOUND", found);
+    // if (found) {
+    //   setEmail("");
+    //   setPassword("");
+    //   navigate(`/${found.building_code}/amenities`);
+    //   props.setState((prevState) => {
+    //     // Object.assign would also work
+    //     return { ...prevState, user: found };
+    //   });
+    // }
     
   };
 
