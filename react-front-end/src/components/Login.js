@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-=======
 import { useCookies } from "react-cookie";
 import Popup from "./PopUp";
->>>>>>> main
 
 //For Login view
 export default function login(props) {
