@@ -1,4 +1,5 @@
 import React from "react";
+import "./AmenityCalendar.css";
 
 export default function CalendarHeader(props) {
   const {selectedDay, setSelectedDay} = props;

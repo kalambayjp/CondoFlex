@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 function Nav(props) {
   const { state, setState } = props;
   let navigate = useNavigate();
+  const Login="/login";
+  const home="/"
 
 
 
@@ -30,6 +32,8 @@ function Nav(props) {
           <div>
             {!localStorage.getItem("name") ? (
               <>
+              
+              
                 <Link to="/login">
                   <button id="btn_nav">Login</button>
                 </Link>
@@ -39,7 +43,7 @@ function Nav(props) {
               </>
             ) : (
               <>
-              <h3>Welcome {localStorage.getItem("name")}</h3>
+              <h3>Welcome, {localStorage.getItem("name")}</h3>
               <button type="submit" id="btn_nav" onClick={Logout}>
                 Logout
               </button>
