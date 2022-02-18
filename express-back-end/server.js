@@ -30,6 +30,7 @@ App.get("/", (req, res) => {
 // }));
 
 
+
 App.use('/api/buildings', require("./routes/buildings"))
 App.use('/api/users', require("./routes/users"))
 App.use('/api/amenities', require("./routes/amenities"))

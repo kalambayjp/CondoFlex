@@ -11,6 +11,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// phone_number should be bigInt / String instead of Int
+
 model users {
   id       Int        @id @default(autoincrement())
   bookings bookings[]
@@ -19,7 +21,7 @@ model users {
   last_name     String
   email         String  @unique
   password      String
-  phone_number  Int
+  phone_number  String
   unit_number   Int
   building_code Int
   is_admin      Boolean @default(false)

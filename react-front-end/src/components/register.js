@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/register.css";
-
+import { useNavigate } from "react-router-dom";
 
 function Register(props) {
 
-  // const { users } = props
-  // console.log(users);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
   const [formData, updateFormData] = useState({
     first_name: "",
     last_name: "",
     email: "",
     password: "",
     phone_number: "",
-    building_code: "",
-    unit_number: ""
+    unit_number: "",
+    building_code: ""
   });
-
-  const [error, setError] = useState("");
-
 
   const handleChange = (e) => {
     updateFormData({
@@ -31,13 +28,26 @@ function Register(props) {
     e.preventDefault()
     console.log(formData);
     if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_code && formData.unit_number) {
-      // ... submit to API or something
       axios
-      .post('http://localhost:8080/register', formData)
-      .then(() => console.log('User Created'))
-      .catch(err => {
-        console.error(err);
-      });    
+        .post('http://localhost:8080/api/users/register', { formData })
+        .then((res) => {
+          const {
+            data: { userCreated, userId },
+          } = res;
+
+          // If user successfully created.
+
+          if (userCreated === "Successful") {
+            console.log(userId);
+            navigate(`/login`);
+          } else {
+            setError("Please enter correct user information");
+            return navigate(`/register`);
+          }
+        })
+        .catch(err => {
+          console.error(err);
+        });
 
     } else {
       setError("Field cannot be blank.")
