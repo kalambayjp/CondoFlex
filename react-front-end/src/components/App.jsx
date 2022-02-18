@@ -22,6 +22,8 @@ export default function App() {
   const [selectedAmenity, setSelectedAmenity] = useState();
   const [LoggedIn, setLoggedIn] = useState(true);
 
+  const login="/login";
+  const home="/";
 
   let userInfo = {};
   if (state.user) {
@@ -58,7 +60,7 @@ export default function App() {
                   <Route path="/register" exact element={<Register />} />
 
                   <Route
-                    path="/login"
+                    path={(localStorage.getItem("name")) ? ("/") : ("/login")}
                     exact
                     element={
                       <Login
