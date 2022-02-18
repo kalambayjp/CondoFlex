@@ -7,7 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 import "./App.css";
-import Nav from "./nav.js";
+import Nav from "./nav";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
