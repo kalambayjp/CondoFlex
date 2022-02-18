@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import axios from "axios";
-import "../styles/nav.css";
+
+import "./nav.css";
+
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
+import logo from "../../images/logo.png";
 import { useNavigate } from "react-router-dom";
 
 function Nav(props) {
   const { state, setState } = props;
   let navigate = useNavigate();
 
-  console.log("PPPPProp", props);
+
 
   const Logout = async () => {
     const user = undefined;

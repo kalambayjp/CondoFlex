@@ -6,7 +6,6 @@ export default function CalendarHeader(props) {
   function currentMonth() {
     return selectedDay.format("MMMM")
   }
-
   function currentYear() {
     return selectedDay.format("YYYY")
   }
@@ -21,7 +20,9 @@ export default function CalendarHeader(props) {
   }
 
   return (
+
     <div className="calendar-header">
+
       <div className="previous" onClick={() => !thisMonth() && setSelectedDay(prevMonth())}>
         {!thisMonth() ? String.fromCharCode(171) : null}
       </div>
@@ -33,7 +34,8 @@ export default function CalendarHeader(props) {
       <div className="next" onClick={() => setSelectedDay(nextMonth())}>
         {String.fromCharCode(187)}
       </div>
-   </div>
+
+    </div>
 
   )
 }
