@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export function useApplicationData() {
-  const [state, setState] = useState({
-    buildingId: 2000, // HARD CODED DATA
+  const [state, setState] = useState({ 
+    buildingId: null, 
     buildings: [],
-    user: undefined,
+    user: null,
     users: [],
     amenities: [],
     bookings: [],
@@ -37,6 +37,7 @@ export function useApplicationData() {
       
   };
 
-  return { state, setState, getDataFromBackend };
+  
+  return {state, setState, getDataFromBackend}; 
 
 }

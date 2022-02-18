@@ -1,4 +1,4 @@
-container {
+.calendar {
   --black: rgb(58,58,58);
   --grey: rgb(205, 205, 205);
   --white: rgb(240, 240, 240);
@@ -57,4 +57,7 @@ content {
 }
 .bookable:hover {
   background-color: aqua;
+}
+.calendar-body {
+  width: 40em;
 }

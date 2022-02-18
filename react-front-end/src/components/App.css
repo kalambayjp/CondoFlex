@@ -53,6 +53,7 @@ footer{
   grid-template-columns: repeat(2, 1fr);
 }
 
+
 .ContainerOne{
   bottom: 30%;
   color: black;
@@ -68,7 +69,6 @@ background-color: rgba(255, 255, 255, 0.651);
   
 }
 
-<<<<<<< HEAD
 .ImgTwo{
   margin-left: 5%;
   width: 40%;
@@ -91,14 +91,8 @@ background-color: rgba(255, 255, 255, 0.651);
   justify-content: center;
   align-items: center;
 } */
-=======
-.page-content {
-  /* padding-top: 5em;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-}
->>>>>>> 6e55416fa258182ba25521e73e2016db6d627193
+
+
 
 
 

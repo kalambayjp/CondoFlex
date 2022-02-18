@@ -1,119 +1,127 @@
-import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Redirect,
-  Switch,
-  Route,
-} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./nav";
-import Footer from "./footer";
-import Header from "./header";
-import Register from "./register";
-import Home from "./Home";
-import Login from "./Login";
+import Nav from "./constants/nav";
+import Footer from "./constants/footer";
+import Header from "./constants/header";
+import Register from "./login-register/register";
+import Login from "./login-register/Login";
 import { useApplicationData } from "../hooks/useApplicationData";
-import AmenitiesList from "./AmenitiesList";
-import AmenityCalendar from "./AmenityCalendar";
+import AmenitiesList from "./amenity-list/AmenitiesList";
+import AmenityCalendar from "./calendar/AmenityCalendar";
 import { CookiesProvider } from "react-cookie";
 import moment from "moment";
 import { lazy } from "react";
-
- //Authenticated routes
 import PrivateRoute from "../privateroute/PrivateRoute";
+import Home from "./Home";
 
-function App() {
-  const { state, setState, getDataFromBackend } = useApplicationData();
+
+export default function App() {
+  const {state, setState, getDataFromBackend} = useApplicationData();
   const [selectedDay, setSelectedDay] = useState(moment());
   const [selectedAmenity, setSelectedAmenity] = useState();
   const [LoggedIn, setLoggedIn] = useState(true);
+
+
+  let userInfo = {};
+  if (state.user) {
+    userInfo = state.user
+    console.log("user info has been set", userInfo);
+  }
+
+
 
   useEffect(() => {
     getDataFromBackend();
     const isAuthenticated = !!localStorage.getItem("name");
     setLoggedIn(isAuthenticated);
   }, []);
-
+ 
   return (
-    <body>
-      <CookiesProvider>
-        <main>
-          <Router>
-            <nav>
-              <Nav state={state} setState={setState} />
-            </nav>
+    <CookiesProvider>
+      <main className="background">
+        <Router>
+          <nav>
+            <Nav state={state} setState={setState} />
+          </nav>
 
-            <header>
-              <Header />
-            </header>
+          <header>
+            <Header />
+          </header>
 
-            <div className="page-content">
-              <content>
+          <div className="page-content">
 
-                <Routes>
+            <div>
+              <Routes>
+                <Route path="/" exact element={<Home />} /> 
+                <Route path="/register" exact element={<Register />} />
 
-                <Route path="/" exact element={<Home />} />
-                  <Route path="/register" exact element={<Register />} />
+                <Route
+                  path="/login"
+                  exact
+                  element={
+                    <Login
+                      users={state.users}
+                      setState={setState}
+                    />
+                  }
+                />
+
+
 
                   <Route
-                    path="/login"
-                    exact
-                    element={
-                      // <Login handleClick={this.handleClick.bind(this)}
-                      <Login users={state.users} setState={setState} />
-                    }
-                  />
-                
-
-                  <Route
-                    path="/:id/amenities"
+                    path="/:building_id/amenities"
                     exact
                     element={<PrivateRoute/> }
                     
                   >
                     <Route
-                    path="/:id/amenities"
-                    exact
+                      path="/:building_id/amenities"
+                      exact
     
-                    element={
-                      
-                      <AmenitiesList
-                        state={state}
-                        selectedAmenity={selectedAmenity}
-                        setSelectedAmenity={setSelectedAmenity}
-                      />
-                    }
-                  >
+                      element={
+                        <AmenitiesList
+                          state={state}
+                          selectedAmenity={selectedAmenity}
+                          setSelectedAmenity={setSelectedAmenity}
+                          buildingId={userInfo.buildingId} 
+                        />
+                      }
+                    >
 
                   </Route>
                   </Route>
+
 
                   <Route
-                    path="/:id/:id/calendar"
-                    element={
-                      <AmenityCalendar
-                        selectedDay={selectedDay}
-                        setSelectedDay={setSelectedDay}
-                        selectedAmenity={selectedAmenity}
-                      />
-                    }
-                  />
-                </Routes>
-              </content>
+                    path="/:building_id/:amenity_id/calendar"
+                    exact
+                    element={<PrivateRoute/> }
+                    
+                  >
+                    <Route  
+                      path="/:building_id/:amenity_id/calendar" 
+                      element={<AmenityCalendar 
+                        selectedDay={selectedDay} 
+                        setSelectedDay={setSelectedDay} 
+                        userId={userInfo.id}
+                      />} 
+                    >
 
-              <div></div>
+                  </Route>
+                  </Route>
+
+              </Routes>
             </div>
-            <br />
-          </Router>
+          </div>
+          <br />
 
-          <footer>
-            <Footer />
-          </footer>
-        </main>
-      </CookiesProvider>
-    </body>
+          <Footer />
+        </Router>
+      
+      </main>
+    </CookiesProvider>
   );
 }
 
-export default App;
+
