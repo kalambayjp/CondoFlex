@@ -90,7 +90,7 @@ export default function login(props) {
             type="email"
             value={email}
             placeholder="ABC@gmail.com"
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={handleChange}
             required
           />
         </div>
@@ -104,7 +104,7 @@ export default function login(props) {
             className="input"
             type="password"
             value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={handleChange}
             required
           />
         </div>
