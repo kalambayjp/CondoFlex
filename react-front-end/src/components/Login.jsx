@@ -59,17 +59,7 @@ export default function login(props) {
         }
       });
 
-    // console.log("FOUND", found);
-    // if (found) {
-    //   setEmail("");
-    //   setPassword("");
-    //   navigate(`/${found.building_code}/amenities`);
-    //   props.setState((prevState) => {
-    //     // Object.assign would also work
-    //     return { ...prevState, user: found };
-    //   });
-    // }
-    
+    console.log("FORMMMMMMMMM", formDetails);
   };
 
   return (
@@ -88,7 +78,8 @@ export default function login(props) {
           <input
             className="input"
             type="email"
-            value={email}
+            name="email"
+            value={formDetails.email}
             placeholder="ABC@gmail.com"
             onChange={handleChange}
             required
@@ -103,7 +94,8 @@ export default function login(props) {
           <input
             className="input"
             type="password"
-            value={password}
+            name="password"
+            value={formDetails.password}
             onChange={handleChange}
             required
           />
