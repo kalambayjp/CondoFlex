@@ -13,7 +13,7 @@ import { CookiesProvider } from "react-cookie";
 import moment from "moment";
 import { lazy } from "react";
 import PrivateRoute from "../privateroute/PrivateRoute";
-import Home from "./Home";
+import Home from "./Home.jsx";
 
 
 export default function App() {
