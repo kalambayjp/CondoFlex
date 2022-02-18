@@ -38,6 +38,17 @@ container-fluid{
   align-self: center;
   box-shadow: 1px 1px #88888800;
 }
+h3{
+  font-family: 'Franklin Gothic Medium';
+  font-size: 20px;
+  margin-top: 5%;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  border-radius: 5%;
+  left: 20%;
+  position: relative;
+  float: left;
+}
 
 #logo img{
 
