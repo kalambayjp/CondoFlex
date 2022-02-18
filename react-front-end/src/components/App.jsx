@@ -38,89 +38,91 @@ export default function App() {
   }, []);
  
   return (
-    <CookiesProvider>
-      <main className="background">
-        <Router>
-          <nav>
-            <Nav state={state} setState={setState} />
-          </nav>
+    <body>
+      <CookiesProvider>
+        <main>
+          <Router>
+            <nav>
+              <Nav state={state} setState={setState} />
+            </nav>
 
-          <header>
-            <Header />
-          </header>
+            <header>
+              <Header />
+            </header>
 
-          <div className="page-content">
+            <div className="page-content">
 
-            <div>
-              <Routes>
-                <Route path="/" exact element={<Home />} /> 
-                <Route path="/register" exact element={<Register />} />
-
-                <Route
-                  path="/login"
-                  exact
-                  element={
-                    <Login
-                      users={state.users}
-                      setState={setState}
-                    />
-                  }
-                />
-
-
+              <div>
+                <Routes>
+                  <Route path="/" exact element={<Home />} /> 
+                  <Route path="/register" exact element={<Register />} />
 
                   <Route
-                    path="/:building_id/amenities"
+                    path="/login"
                     exact
-                    element={<PrivateRoute/> }
-                    
-                  >
+                    element={
+                      <Login
+                        users={state.users}
+                        setState={setState}
+                      />
+                    }
+                  />
+
+
+
                     <Route
                       path="/:building_id/amenities"
                       exact
-    
-                      element={
-                        <AmenitiesList
-                          state={state}
-                          selectedAmenity={selectedAmenity}
-                          setSelectedAmenity={setSelectedAmenity}
-                          buildingId={userInfo.buildingId} 
-                        />
-                      }
+                      element={<PrivateRoute/> }
+                      
                     >
-
-                  </Route>
-                  </Route>
-
-
-                  <Route
-                    path="/:building_id/:amenity_id/calendar"
-                    exact
-                    element={<PrivateRoute/> }
-                    
-                  >
-                    <Route  
-                      path="/:building_id/:amenity_id/calendar" 
-                      element={<AmenityCalendar 
-                        selectedDay={selectedDay} 
-                        setSelectedDay={setSelectedDay} 
-                        userId={userInfo.id}
-                      />} 
-                    >
-
-                  </Route>
-                  </Route>
-
-              </Routes>
-            </div>
-          </div>
-          <br />
-
-          <Footer />
-        </Router>
+                      <Route
+                        path="/:building_id/amenities"
+                        exact
       
-      </main>
-    </CookiesProvider>
+                        element={
+                          <AmenitiesList
+                            state={state}
+                            selectedAmenity={selectedAmenity}
+                            setSelectedAmenity={setSelectedAmenity}
+                            buildingId={userInfo.buildingId} 
+                          />
+                        }
+                      >
+
+                    </Route>
+                    </Route>
+
+
+                    <Route
+                      path="/:building_id/:amenity_id/calendar"
+                      exact
+                      element={<PrivateRoute/> }
+                      
+                    >
+                      <Route  
+                        path="/:building_id/:amenity_id/calendar" 
+                        element={<AmenityCalendar 
+                          selectedDay={selectedDay} 
+                          setSelectedDay={setSelectedDay} 
+                          userId={userInfo.id}
+                        />} 
+                      >
+
+                    </Route>
+                    </Route>
+
+                </Routes>
+              </div>
+            </div>
+            <br />
+
+            <Footer />
+          </Router>
+        
+        </main>
+      </CookiesProvider>
+    </body>
   );
 }
 
