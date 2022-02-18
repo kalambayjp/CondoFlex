@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames"
 import "./DayScheduleItem.css";
 
@@ -16,7 +16,7 @@ export default function DayScheduleItem(props) {
   } = props;
 
   const displayTime = time.slice(16,21)
-  const [selectedTime, setSelectedTime] = useState([]);
+  // const [selectedTime, setSelectedTime] = useState([]);
   let sum = 0;
 
   if (bookings && bookings.length > 0) {
@@ -33,20 +33,33 @@ export default function DayScheduleItem(props) {
 
   }
 
+  const requestTime = moment.format("YYYY-MM-DD-HH:mm")
 
   const handleClick = async (time) => {
 
+    if (submitBookingTime.includes(requestTime)) {
+      console.log(time)
+      const newTimes = submitBookingTime.filter(time => time !== requestTime)
+      setSubmitBookingTime(newTimes)
+      setRequestBooking(true)
+      console.log(submitBookingTime)
+      return  
+    }
+
     console.log(time)
-    const requestTime = moment.format("YYYY-MM-DD-HH:mm")
     setSubmitBookingTime([...submitBookingTime, requestTime])
-    setSelectedTime([...selectedTime, time])
+    // setSelectedTime([...selectedTime, time])
     setRequestBooking(true)
 
+
   }
+  // console.log("after func",submitBookingTime)
 
   const timeClass = classNames(
     "display-time",
-    {"selected": selectedTime.includes(time)},
+    // {"selected": selectedTime.includes(time)},
+    {"selected": submitBookingTime.includes(requestTime)},
+
   );
 
   

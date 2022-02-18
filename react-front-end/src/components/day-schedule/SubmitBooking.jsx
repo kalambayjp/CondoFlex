@@ -11,7 +11,7 @@ export function SubmitBooking(props) {
   //   `http://localhost:8080/api/bookings?amenityId=${selectedAmenity}&date=${dayFormatted}`
   // )
   const createBooking = async (submitBookingTime, selectedAmenity, numOfPpl, userId) => {
-
+    console.log("booking time at submit", submitBookingTime );
     try {
       const myBooking = await axios.post(
       `http://localhost:8080/api/bookings?userId=${userId}&amenityId=${selectedAmenity}&numOfPpl=${numOfPpl}&startTime=${submitBookingTime}`)
