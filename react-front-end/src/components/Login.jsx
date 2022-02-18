@@ -39,15 +39,17 @@ export default function login(props) {
       .then((res) => {
         const { data: allData } = res;
         const {
-          data: { Logged, building_code, first_name },
+          data: { user_id, Logged, building_code, first_name },
         } = res;
         console.log("RESPONSE", res.data);
 
         // If successfully logged IN.
 
         if (Logged === "Successful") {
+         
           // setCookie('Name', first_name, { path: '/' });
           localStorage.setItem("name", first_name);
+          localStorage.setItem("id",user_id)
           navigate(`/${building_code}/amenities`);
           props.setState((prevState) => {
             // Object.assign would also work

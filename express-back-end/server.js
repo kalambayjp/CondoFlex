@@ -2,6 +2,7 @@ const express = require('express');
 const App = express();
 const BodyParser = require('body-parser');
 const { application } = require('express');
+const cookieSession = require ('cookie-session')
 const PORT = 8080;
 const { PrismaClient } = require("@prisma/client");
 

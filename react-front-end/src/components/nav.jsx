@@ -37,9 +37,12 @@ function Nav(props) {
                 </Link>
               </>
             ) : (
+              <>
+              <h3>Welcome {localStorage.getItem("name")}</h3>
               <button type="submit" id="btn_nav" onClick={Logout}>
                 Logout
               </button>
+              </>
             )}
           </div>
         </section>

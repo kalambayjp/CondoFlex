@@ -36,6 +36,7 @@ router.post('/login', async (req, res) => {
     }
   });
   console.log("\n USERDATAAAAAAAAAA \n",usersData)
+  let user_id=""
   let Logged="";
   let first_name=""
   let building_code=""
@@ -44,6 +45,7 @@ router.post('/login', async (req, res) => {
   //console.log("PASSSSSSSSSUSERRRRRRRRRR",password);
   
   if((users)&&(usersData)&&(usersData.password===password)){
+    user_id=usersData.id;
     first_name = usersData.first_name;
     building_code = usersData.building_code;
     // console.log("RRREQQQSESSION",req.session.user_id)
@@ -58,7 +60,7 @@ router.post('/login', async (req, res) => {
   }
 
   // console.log("USERDATAAAAAA",usersData)
-  res.json({first_name: first_name,building_code: building_code, Logged:Logged });
+  res.json({user_id:user_id, first_name: first_name,building_code: building_code, Logged:Logged });
   
 })
 
