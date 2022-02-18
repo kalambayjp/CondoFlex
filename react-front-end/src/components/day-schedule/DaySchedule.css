@@ -15,3 +15,7 @@
 .day-schedule {
   width: 40em;
 }
+
+.selected {
+  background-color: rgb(218, 17, 17);
+}

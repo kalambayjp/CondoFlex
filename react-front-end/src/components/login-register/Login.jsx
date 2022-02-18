@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie";
 import Popup from "../PopUp";
 
 //For Login view
-export default function login(props) {
+export default function Login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   // const [cookies, setCookie] = useCookies(["user"]);

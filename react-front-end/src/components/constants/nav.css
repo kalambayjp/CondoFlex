@@ -2,25 +2,22 @@ nav {
   /* opacity: 0.95; */
 }
 
-.navbar{
+.navbar {
   display: flex;
   width: 100%;
- background-color:#ffd700;
+  background-color: #ffd700;
 }
 
-container-fluid{
-
+container-fluid {
 }
 
-#btn_nav{
-  position:relative;
-  left: 75px;
+#btn_nav {
+  position: relative;
   text-align: center;
   width: 30%;
   height: 35px;
-  background:  rgb(70, 70, 70);
+  background: rgb(70, 70, 70);
   padding-right: 60px;
-  margin: 10px;
   float: left;
   border-radius: 50px;
   font-size: 18px;
@@ -30,7 +27,7 @@ container-fluid{
   box-shadow: 4px 5px #88888871;
 }
 
-#btn_nav:hover{
+#btn_nav:hover {
   background: rgb(2, 2, 73);
   transition: 0.5s;
   transform: scale(0.8);
@@ -38,40 +35,41 @@ container-fluid{
   align-self: center;
   box-shadow: 1px 1px #88888800;
 }
-h3{
-  font-family: 'Franklin Gothic Medium';
-  font-size: 20px;
+h3 {
+  font-family: Papyrus;
+  font-weight: bolder;
+  font-size: 150%;
   margin-top: 5%;
-  background-color: rgb(70, 70, 70);
+  text-shadow: 5px 5px 5px rgb(2, 2, 73);
+  margin-left: 5%;
+  bottom: 14%;
   color: white;
   border-radius: 5%;
-  left: 20%;
+  right: 20%;
   position: relative;
   float: left;
 }
 
-#logo img{
-
+#logo img {
   border-radius: 40px 40px 0px 0px;
   box-shadow: inset 3px 3px 9px rgb(70, 70, 70);
   width: 200px;
   height: 80px;
-  opacity: 0.95; 
-
+  opacity: 0.95;
 }
 
-img:hover{
+img:hover {
   transform: scale(0.93);
-  opacity: 0.75; 
+  opacity: 0.75;
 }
 
-@media only screen and (max-width:1000px) {
-  #btn_nav{
+@media only screen and (max-width: 1000px) {
+  #btn_nav {
     left: 75px;
     text-align: center;
     width: 30%;
     height: 35px;
-    background:  rgb(70, 70, 70);
+    background: rgb(70, 70, 70);
     padding-left: 15px;
     padding-right: 60px;
     float: left;
@@ -83,7 +81,7 @@ img:hover{
     font-family: Roboto;
     box-shadow: 4px 5px #88888871;
   }
-  #btn_nav:hover{
+  #btn_nav:hover {
     background: rgb(2, 2, 73);
     transition: 0.5s;
     transform: scale(0.8);
@@ -92,36 +90,31 @@ img:hover{
     box-shadow: 1px 1px #88888800;
   }
 
-  #logo img{
-
-    
+  #logo img {
     border-radius: 40px 40px 0px 0px;
     box-shadow: inset 3px 3px 9px rgb(70, 70, 70);
     width: 150px;
     height: 60px;
-    opacity: 0.95; 
-  
+    opacity: 0.95;
   }
-  img:hover{
+  img:hover {
     transform: scale(0.93);
-    opacity: 0.75; 
+    opacity: 0.75;
   }
-
 }
 
-@media screen and (max-width:500px) {
-
-  .navbar{
+@media screen and (max-width: 500px) {
+  .navbar {
     width: 120%;
-   background-color:#ffd700;
+    background-color: #ffd700;
   }
 
-  #btn_nav{
+  #btn_nav {
     left: 74px;
     text-align: center;
     width: 30%;
     height: 35px;
-    background:  rgb(70, 70, 70);
+    background: rgb(70, 70, 70);
     padding-left: 15px;
     padding-right: 60px;
     float: left;
@@ -133,7 +126,7 @@ img:hover{
     font-family: Roboto;
     box-shadow: 4px 5px #88888871;
   }
-  #btn_nav:hover{
+  #btn_nav:hover {
     background: rgb(2, 2, 73);
     transition: 0.5s;
     transform: scale(0.8);
@@ -142,20 +135,17 @@ img:hover{
     box-shadow: 1px 1px #88888800;
   }
 
-  #logo img{
+  #logo img {
     position: relative;
     left: 70%;
     border-radius: 40px 40px 0px 0px;
     box-shadow: inset 3px 3px 9px rgb(70, 70, 70);
     width: 150px;
     height: 60px;
-    opacity: 0.95; 
-  
+    opacity: 0.95;
   }
-  img:hover{
+  img:hover {
     transform: scale(0.93);
-    opacity: 0.75; 
+    opacity: 0.75;
   }
 }
-
-
