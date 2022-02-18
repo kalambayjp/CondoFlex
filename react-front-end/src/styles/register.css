@@ -54,26 +54,30 @@ h6{
 
 
 @media screen and (max-width:800px) {
+
+
 .register {
 
   width: 50%;
   display:grid;
   grid-template-columns: auto;
   font-family: Roboto;
-  margin: 20px;
+  margin: 0px;
   justify-items: center;
   text-align: center;
 
 }
 .register-container{
   position: relative;
-  left: 20px;
+  /* left: 20px; */
   justify-items: center;
   text-align: center;
   background-color: #ffd700;
   border-radius: 50px 0px;
   box-shadow: 6px 6px rgba(21, 40, 180, 0.342);
   padding: px;
+  width: 80%;
+  margin: 40px;
 }
 input {
   background: white;
@@ -106,4 +110,3 @@ h6{
 
 
 }
-

@@ -4,6 +4,7 @@ nav {
 
 .navbar{
   display: flex;
+  width: 100%;
  background-color:#ffd700;
 }
 
@@ -36,6 +37,17 @@ container-fluid{
   align-content: center;
   align-self: center;
   box-shadow: 1px 1px #88888800;
+}
+h3{
+  font-family: 'Franklin Gothic Medium';
+  font-size: 20px;
+  margin-top: 5%;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  border-radius: 5%;
+  left: 20%;
+  position: relative;
+  float: left;
 }
 
 #logo img{
@@ -100,8 +112,7 @@ img:hover{
 @media screen and (max-width:500px) {
 
   .navbar{
-    width: 110%;
-    display: flex;
+    width: 120%;
    background-color:#ffd700;
   }
 

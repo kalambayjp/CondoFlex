@@ -35,6 +35,7 @@ router.post('/login', async (req, res) => {
       email: email,
     }
   });
+<<<<<<< HEAD
   console.log("\n USERDATAAAAAAAAAA \n", usersData)
   let Logged = "";
   let first_name = ""
@@ -44,6 +45,19 @@ router.post('/login', async (req, res) => {
   //console.log("PASSSSSSSSSUSERRRRRRRRRR",password);
 
   if ((users) && (usersData) && (usersData.password === password)) {
+=======
+  console.log("\n USERDATAAAAAAAAAA \n",usersData)
+  let user_id=""
+  let Logged="";
+  let first_name=""
+  let building_code=""
+
+  // console.log("PASSSSSSSSS",usersData.password)
+  //console.log("PASSSSSSSSSUSERRRRRRRRRR",password);
+  
+  if((users)&&(usersData)&&(usersData.password===password)){
+    user_id=usersData.id;
+>>>>>>> 73d31b3b035a9fa3d83201de45ff3a3688038aa9
     first_name = usersData.first_name;
     building_code = usersData.building_code;
     // console.log("RRREQQQSESSION",req.session.user_id)
@@ -57,6 +71,7 @@ router.post('/login', async (req, res) => {
   }
 
   // console.log("USERDATAAAAAA",usersData)
+<<<<<<< HEAD
   res.json({ first_name: first_name, building_code: building_code, Logged: Logged });
 
 })
@@ -119,6 +134,10 @@ router.post('/register', async (req, res) => {
 
   res.json({ userCreated: userCreated, userId: userId });
 
+=======
+  res.json({user_id:user_id, first_name: first_name,building_code: building_code, Logged:Logged });
+  
+>>>>>>> 73d31b3b035a9fa3d83201de45ff3a3688038aa9
 })
 
 //----------------------------- Register End ------------------------------------------------------------------

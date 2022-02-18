@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
-import { useCookies } from 'react-cookie';
+import { useCookies } from "react-cookie";
+import Popup from "./PopUp";
 
 //For Login view
 export default function login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [cookies, setCookie] = useCookies(['user']);
+  // const [cookies, setCookie] = useCookies(["user"]);
+  const [isOpen, setIsOpen] = useState(false);
   const [formDetails, setFormDetails] = useState({
     email: "",
     password: "",
   });
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   let navigate = useNavigate();
   console.log("Props", props);
@@ -23,8 +29,6 @@ export default function login(props) {
   const handleChange = (e) => {
     const name = e.target.name;
     const password = e.target.value;
-    setCookie('Name', name, { path: '/' });
-    setCookie('Password', password, { path: '/' });
     setFormDetails({ ...formDetails, [name]: password });
   };
 
@@ -33,22 +37,27 @@ export default function login(props) {
     axios
       .post("http://localhost:8080/api/users/login", { formDetails })
       .then((res) => {
-        const {data:allData} = res;
+        const { data: allData } = res;
         const {
-          data: { Logged, building_code, first_name },
+          data: { user_id, Logged, building_code, first_name },
         } = res;
-       
+        console.log("RESPONSE", res.data);
+
         // If successfully logged IN.
-  
+
         if (Logged === "Successful") {
+         
+          // setCookie('Name', first_name, { path: '/' });
+          localStorage.setItem("name", first_name);
+          localStorage.setItem("id",user_id)
           navigate(`/${building_code}/amenities`);
           props.setState((prevState) => {
             // Object.assign would also work
             return { ...prevState, user: allData };
           });
         } else {
-          alert("Please enter correct login information");
-          return  navigate(`/register`);
+          setIsOpen(!isOpen);
+          // return  navigate(`/register`);
         }
       });
 
@@ -93,6 +102,19 @@ export default function login(props) {
             required
           />
         </div>
+        <div>
+          {isOpen && (
+            <Popup
+              content={
+                <>
+                  <b>Wrong password or email. Please try again!</b>
+                </>
+              }
+              handleClose={togglePopup}
+            />
+          )}
+        </div>
+
         <br />
 
         <button type="submit" id="btn_submit">

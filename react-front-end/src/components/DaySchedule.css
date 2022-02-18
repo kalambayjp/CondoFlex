@@ -1,8 +1,8 @@
 .schedule-times {
-  /* display: grid;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 1em;
-  grid-row-gap: 1em; */
+  grid-row-gap: 1em;
 
   display: flex;
   flex-direction: column;
