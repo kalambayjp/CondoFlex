@@ -39,7 +39,7 @@ function Register(props) {
 
           if (userCreated === "Successful") {
             console.log(userId);
-            navigate(`/login`);
+            navigate(`/`);
           } else {
             setError("Please enter correct user information");
             return navigate(`/register`);

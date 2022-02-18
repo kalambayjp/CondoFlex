@@ -66,7 +66,7 @@ router.post('/register', async (req, res) => {
   const lastName = last_name;
   const userEmail = email;
   const userPassword = password;
-  const phoneNumber = phone_number;
+  const phoneNumber = Number.parseInt(phone_number);
   const unitNumber = Number.parseInt(unit_number);
   const buildingCode = Number.parseInt(building_code);
   let userCreated = "";
@@ -81,7 +81,7 @@ router.post('/register', async (req, res) => {
         password: userPassword,
         phone_number: phoneNumber,
         unit_number: unitNumber,
-        building_code: buildingCode
+        building_id: buildingCode
       },
     })
   } catch (e) {
