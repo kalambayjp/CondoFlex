@@ -35,17 +35,6 @@ router.post('/login', async (req, res) => {
       email: email,
     }
   });
-<<<<<<< HEAD
-  console.log("\n USERDATAAAAAAAAAA \n", usersData)
-  let Logged = "";
-  let first_name = ""
-  let building_code = ""
-
-  // console.log("PASSSSSSSSS",usersData.password)
-  //console.log("PASSSSSSSSSUSERRRRRRRRRR",password);
-
-  if ((users) && (usersData) && (usersData.password === password)) {
-=======
   console.log("\n USERDATAAAAAAAAAA \n",usersData)
   let user_id=""
   let Logged="";
@@ -57,7 +46,6 @@ router.post('/login', async (req, res) => {
   
   if((users)&&(usersData)&&(usersData.password===password)){
     user_id=usersData.id;
->>>>>>> 73d31b3b035a9fa3d83201de45ff3a3688038aa9
     first_name = usersData.first_name;
     building_code = usersData.building_code;
     // console.log("RRREQQQSESSION",req.session.user_id)
@@ -71,73 +59,8 @@ router.post('/login', async (req, res) => {
   }
 
   // console.log("USERDATAAAAAA",usersData)
-<<<<<<< HEAD
-  res.json({ first_name: first_name, building_code: building_code, Logged: Logged });
-
-})
-
-
-//----------------------------- Register Start ------------------------------------------------------------------
-
-
-router.post('/register', async (req, res) => {
-  console.log("Register Data:", req.body.formData)
-  const { first_name, last_name, email, password, phone_number, unit_number, building_code } = req.body.formData
-
-  const firstName = first_name;
-  const lastName = last_name;
-  const userEmail = email;
-  const userPassword = password;
-  const phoneNumber = phone_number;
-  const unitNumber = Number.parseInt(unit_number);
-  const buildingCode = Number.parseInt(building_code);
-  let userCreated = "";
-  let userId = 0;
-
-  try {
-    await users.create({
-      data: {
-        first_name: firstName,
-        last_name: lastName,
-        email: userEmail,
-        password: userPassword,
-        phone_number: phoneNumber,
-        unit_number: unitNumber,
-        building_code: buildingCode
-      },
-    })
-  } catch (e) {
-    if (e instanceof Prisma.PrismaClientKnownRequestError) {
-      if (e.code === 'P2002') {
-        console.log(
-          'There is a unique constraint violation, a new user cannot be created with this email.'
-        )
-      }
-    }
-    throw e
-  }
-
-  const usersData = await users.findUnique({
-    where: {
-      email: userEmail,
-    }
-  });
-
-  if ((usersData) && (usersData.email === userEmail)) {
-    userId = usersData.id;
-    userCreated = "Successful";
-    console.log("User Created: ",)
-  }
-  else {
-    userCreated = "Unsuccessful";
-  }
-
-  res.json({ userCreated: userCreated, userId: userId });
-
-=======
   res.json({user_id:user_id, first_name: first_name,building_code: building_code, Logged:Logged });
   
->>>>>>> 73d31b3b035a9fa3d83201de45ff3a3688038aa9
 })
 
 //----------------------------- Register End ------------------------------------------------------------------
