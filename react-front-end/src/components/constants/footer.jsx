@@ -1,13 +1,13 @@
 import React from "react";
 import "./footer.css"
-import logo from "../images/logo.png";
+import logo from "../../images/logo.png";
 
 function Footer() {
   return (
     <footer>
       <div className="foot-One">
     <ul className="list-inline">
-        <li class="list-inline-item"><a href="#">Home</a></li>
+        <li class="list-inline-item"><a href="/">Home</a></li>
         <li class="list-inline-item"><a href="#">Services</a></li>
         <li class="list-inline-item"><a href="#">About</a></li>
     </ul>
@@ -15,7 +15,7 @@ function Footer() {
     <div className="foot-One">
     <ul className="list-inline">
     <li class="list-inline-item"><a href="#">Created By : </a></li>
-        <li class="list-inline-item"><a href="#">JP Kalambay</a></li>
+        <li class="list-inline-item"><a href="">JP Kalambay</a></li>
         <li class="list-inline-item"><a href="#">Sanjoy Kumar</a></li>
         <li class="list-inline-item"><a href="#">Clinton Omamohwo</a></li>
     </ul>
