@@ -23,7 +23,7 @@ function Nav(props) {
     <nav className="navbar">
       <div className="container-fluid">
         <div id="logo">
-          <img src={logo} href="/home" alt="Condo Flex" />
+          <img src={logo} href="/" alt="Condo Flex" />
         </div>
         <section>
           <div>
