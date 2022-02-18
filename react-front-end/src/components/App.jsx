@@ -11,7 +11,7 @@ import Nav from "./nav";
 import Footer from "./footer";
 import Header from "./header";
 import Register from "./register";
-import Home from "./Home";
+import Home from "./Home.jsx";
 import Login from "./Login";
 import { useApplicationData } from "../hooks/useApplicationData";
 import AmenitiesList from "./AmenitiesList";
