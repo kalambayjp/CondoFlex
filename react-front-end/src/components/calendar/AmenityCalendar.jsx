@@ -53,6 +53,7 @@ export default function AmenityCalendar(props) {
   }
 
   return (
+    <section>
    <div className="calendar">
 
      {daySchedule && 
@@ -83,11 +84,12 @@ export default function AmenityCalendar(props) {
         setCalendar={setCalendar}
       />
 
-     <div className="calendar-body">
+     <div className="calendar-body" tabindex="1">
+
        <div className="day-names">
           {
-            ["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
-              <div key={i} className="week"> {d} </div>
+            ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((d, i) => (
+              <div key={i} className="Week"> {d} </div>
             ))
           }
        </div>
@@ -102,8 +104,10 @@ export default function AmenityCalendar(props) {
                     onClick={() => handleDay(day)}
                   >
 
+                    <div className="hm">
                     <div className={dayStyles(day)}>
                       { day.format("D")}
+                    </div>
                     </div>
 
                   </div>)
@@ -113,5 +117,6 @@ export default function AmenityCalendar(props) {
         }
      </div>
    </div>
+   </section>
   )
 }

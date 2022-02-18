@@ -1,6 +1,6 @@
 .building-amenities {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto auto; 
   column-gap: 10px;
   row-gap: 15px;

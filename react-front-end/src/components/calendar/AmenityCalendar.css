@@ -1,21 +1,118 @@
-.calendar {
-  --black: rgb(58,58,58);
-  --grey: rgb(205, 205, 205);
-  --white: rgb(240, 240, 240);
-  --red: rgb(206, 206, 206);
-  --light-blue: rgb(102, 193, 255);
-  --font-line: "AirbnbCerealLight", "sans-serif";
-  --font-book: "AirbnbCerealLight", "sans-serif";
-  --font-black: "AirbnbCerealLight", "sans-serif";
-  color: var(--black);
-  font-family: var(--font-light);
-  font-size: 16px;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
+section {
+  display: flex;
+}
+.calendar-header {
+  margin: 0px;
+}
+div.calendar {
 
+  display: flex;
+  align-items: center;
+  width:50%;
+  background: rgb(255, 255, 255);
+  border-radius: 20%;
+  margin: 20%;
+  display: grid;
+  grid-template-rows: 10rem auto 8rem;
+  box-shadow: 1rem 4px 8px rgba(49, 49, 49, 0.76);
+  cursor: pointer;
+}
+div.calendar-header {
+  visibility: hidden;
+}
+div.day{
+  top: 40%;
 }
 
-@font-face {
+div.display-time {
+  display: grid;
+  position: relative;
+  size: 20%;
+  left: 10%;
+  height: 60%;
+  grid-column-gap: 10em;
+  grid-row-gap: 10em;
+  width: 70%;
+  margin: 0px;
+  border-radius: 20%;
+}
+div.display-time:visited {
+  background-color: purple;
+}
+div.display-time:focus {
+  background-color: #00c;
+}
+div.schedule-times {
+  position: relative;
+  bottom: 120px;
+  border-radius: 5%;
+  border: 20px solid gold;
+  padding: 10px;
+  background: rgb(255, 255, 255);
+  bottom: -80%;
+  margin-bottom: 36%;
+  right: 11%;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  /* width: calc(100% / 9); */
+  width: 120%;
+  height: 160%;
+}
+div.day-schedule {
+  /* visibility: hidden; */
+}
+input {
+  background: white;
+  border: #ccc 1px solid;
+  border-bottom: #ccc 2px solid;
+  padding: 8px;
+  width: 20%;
+  color: black;
+  margin: 15px;
+  font-size: 1em;
+  border-radius: 20px;
+}
+
+button {
+  align-self: center;
+  width: 13%;
+  height: 40px;
+  background: rgb(70, 70, 70);
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 2px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  font-family: Roboto;
+  box-shadow: 4px 5px #88888871;
+}
+
+.submit-booking form {
+  position: relative;
+  bottom: 320%;
+  left: 25%;
+}
+div.day-schedule header{
+background-color: rgba(255, 217, 0, 0.904);
+width: 17%;
+opacity: 0.6px;
+}
+.Week {
+  margin: 0;
+  padding: 10px 10px;
+  background-color: gold;
+  font-size: 28px;
+  display: inline-block;
+  width: calc(100% / 7);
+  color: #666;
+  text-align: center;
+}
+p {
+  font-size: 10px;
+}
+
+/* @font-face {
   font-family: "AirbnbCerealLight";
   src: url(/fonts/AirbnbCerealLight.woff);
 }
@@ -34,30 +131,38 @@
 @font-face {
   font-family: "AirbnbCerealBlack";
   src: url(/fonts/AirbnbCerealLight.woff);
-}
+} */
 content {
   width: 40em;
   height: 30em;
 }
-.calendar .day, .week {
+.calendar .day {
   position: relative;
   width: calc(100% / 7);
-  height: 44px;
   display: inline-block;
   background-color: white;
-  padding: 0;
+  padding: 2%;
   margin: 0;
   box-sizing: border-box;
   z-index: 1;
   text-align: center;
-} 
+}
 
 .before {
   background-color: grey;
 }
+.current {
+}
+.selected {
+  background-color: rgb(218, 17, 17);
+}
 .bookable:hover {
-  background-color: aqua;
+  background-color: gold;
+  height: 10%;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
 }
 .calendar-body {
-  width: 40em;
+  height:auto;
 }
