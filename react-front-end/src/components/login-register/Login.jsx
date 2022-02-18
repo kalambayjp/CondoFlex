@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/Login.css";
+import "../../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie';
 
@@ -15,10 +15,9 @@ export default function login(props) {
   });
 
   let navigate = useNavigate();
-  console.log("Props", props);
+ 
   let users = props.users || [];
 
-  console.log("Users", users);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -35,16 +34,17 @@ export default function login(props) {
       .then((res) => {
         const {data:allData} = res;
         const {
-          data: { Logged, building_code, first_name },
+          data: { Logged, building_id, first_name, userId},
         } = res;
        
         // If successfully logged IN.
   
         if (Logged === "Successful") {
-          navigate(`/${building_code}/amenities`);
+          navigate(`/${building_id}/amenities`);
           props.setState((prevState) => {
             // Object.assign would also work
-            return { ...prevState, user: allData };
+            console.log("data -->", allData)
+            return { ...prevState, user: {id: userId, first_name: first_name} , buildingId: building_id};
           });
         } else {
           alert("Please enter correct login information");
@@ -52,7 +52,7 @@ export default function login(props) {
         }
       });
 
-    console.log("FORMMMMMMMMM", formDetails);
+  
   };
 
   return (

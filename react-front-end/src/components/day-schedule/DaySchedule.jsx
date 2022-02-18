@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import DayScheduleItem from "./DayScheduleItem";
 import "./DaySchedule.css";
-import { buildTimeBlocks } from "../helpers/dayScheduleFuncs";
-import { getBookingsForDay } from "../helpers/dataFetching"
+import { buildTimeBlocks } from "../../helpers/dayScheduleFuncs";
+import { getBookingsForDay } from "../../helpers/dataFetching"
 
 
 
@@ -14,7 +14,8 @@ export default function DaySchedule(props) {
     requestBooking, 
     setRequestBooking, 
     submitBookingTime, 
-    setSubmitBookingTime 
+    setSubmitBookingTime,
+    lastRequestTime
   } = props;
 
   const dayFormatted = day.format("YYYY-MM-DD");
@@ -29,9 +30,9 @@ export default function DaySchedule(props) {
       setBookings(res)
     })
 
-  }, [dayFormatted] )
+  }, [dayFormatted, lastRequestTime] )
 
-
+  
   if (bookings && bookings.length > 0) {
 
     timeBlocks.forEach(time => {

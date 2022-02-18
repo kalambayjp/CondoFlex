@@ -1,21 +1,27 @@
 import React, {useState, useEffect} from "react";
 import "./AmenityCalendar.css";
-import { buildCalendar, dayStyles, beforeToday } from "../helpers/calendarFuncs";
+import { buildCalendar, dayStyles, beforeToday } from "../../helpers/calendarFuncs";
 import CalendarHeader from "./CalendarHeader";
-import DaySchedule from "./DaySchedule";
+import DaySchedule from "../day-schedule/DaySchedule";
 import axios from "axios";
-import { SubmitBooking } from "./submitBooking";
+import { SubmitBooking } from "../day-schedule/SubmitBooking";
+import { useParams } from "react-router-dom";
 
 
 
 export default function AmenityCalendar(props) {
-  const {selectedDay, setSelectedDay, selectedAmenity} = props;
+  const {selectedDay, setSelectedDay, userId} = props;
+  console.log("userId -->",userId)
   const [calendar, setCalendar] = useState([]);
   const [daySchedule, setDaySchedule] = useState(false);
   const [dayScheduleProp, setDayScheduleProp] = useState();
   const [capacity, setCapacity] = useState(0);
   const [requestBooking, setRequestBooking] = useState(false);
   const [submitBookingTime, setSubmitBookingTime] = useState([]);
+  const [lastRequestTime, setLastRequestTime] = useState()
+  const params = useParams();
+  const selectedAmenity = params.amenity_id;
+  // console.log(params)
 
   const getCapacity = async (selectedAmenity) => {
     try {
@@ -58,12 +64,16 @@ export default function AmenityCalendar(props) {
         setRequestBooking={setRequestBooking}
         submitBookingTime={submitBookingTime}
         setSubmitBookingTime={setSubmitBookingTime}
+        lastRequestTime={lastRequestTime}
       />}
 
       {requestBooking && 
         <SubmitBooking 
           submitBookingTime={submitBookingTime} 
           selectedAmenity={selectedAmenity}
+          userId={userId}
+          setLastRequestTime={setLastRequestTime}
+
         />
       }
 

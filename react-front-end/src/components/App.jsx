@@ -1,22 +1,28 @@
 import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./nav";
-import Footer from "./footer";
-import Header from "./header";
-import Register from "./register";
-import Login from "./Login";
+import Nav from "./constants/nav";
+import Footer from "./constants/footer";
+import Header from "./constants/header";
+import Register from "./login-register/register";
+import Login from "./login-register/Login";
 import { useApplicationData } from "../hooks/useApplicationData";
-import AmenitiesList from "./AmenitiesList";
-import AmenityCalendar from "./AmenityCalendar";
+import AmenitiesList from "./amenity-list/AmenitiesList";
+import AmenityCalendar from "./calendar/AmenityCalendar";
 import { CookiesProvider } from "react-cookie";
 import moment from "moment";
 
 
 function App() {
-   const {state, setState, getDataFromBackend} = useApplicationData();
+  const {state, setState, getDataFromBackend} = useApplicationData();
   const [selectedDay, setSelectedDay] = useState(moment());
-  const [selectedAmenity, setSelectedAmenity] = useState()
+  const [selectedAmenity, setSelectedAmenity] = useState();
+  let userInfo = {};
+  if (state.user) {
+    userInfo = state.user
+    console.log("user info has been set", userInfo);
+  }
+
 
 
   useEffect(() => {
@@ -25,59 +31,63 @@ function App() {
  
   return (
     <CookiesProvider>
-    <main className="background">
-      <Router>
-        <nav>
-          <Nav state={state} setState={setState} />
-        </nav>
+      <main className="background">
+        <Router>
+          <nav>
+            <Nav state={state} setState={setState} />
+          </nav>
 
-        <header>
-          <Header />
-        </header>
+          <header>
+            <Header />
+          </header>
 
-        <div className="page-content">
-          <div className="background"></div>
+          <div className="page-content">
 
-          <div>
-            <Routes>
-              <Route path="/register" exact element={<Register />} />
+            <div>
+              <Routes>
+                <Route path="/register" exact element={<Register />} />
 
-              <Route
-                path="/login"
-                exact
-                element={
-                  <Login
-                    users={state.users}
-                    setState={setState}
+                <Route
+                  path="/login"
+                  exact
+                  element={
+                    <Login
+                      users={state.users}
+                      setState={setState}
+                    />
+                  }
+                />
+               {userInfo &&
+                  <Route
+                    path="/:building_id/amenities"
+                    exact
+                    element={<AmenitiesList 
+                      state={state} 
+                      selectedAmenity={selectedAmenity} 
+                      setSelectedAmenity={setSelectedAmenity}
+                      buildingId={userInfo.buildingId} 
+                    />}
                   />
                 }
-              />
-              <Route
-                path="/:id/amenities"
-                exact
-                element={<AmenitiesList 
-                  state={state} 
-                  selectedAmenity={selectedAmenity} 
-                  setSelectedAmenity={setSelectedAmenity} 
-                />}
-              />
 
-              <Route path="/:id/:id/calendar" 
-                element={<AmenityCalendar 
-                selectedDay={selectedDay} 
-                setSelectedDay={setSelectedDay} 
-                selectedAmenity={selectedAmenity}
-              />} />
-
-            </Routes>
+                {userInfo && 
+                  <Route path="/:building_id/:amenity_id/calendar" 
+                    element={<AmenityCalendar 
+                      selectedDay={selectedDay} 
+                      setSelectedDay={setSelectedDay} 
+                      userId={userInfo.id}
+                    />} 
+                  />
+                } 
+              </Routes>
+            </div>
           </div>
-        </div>
-        <br />
+          <br />
 
-        <Footer />
-      </Router>
-    
-    </main>
+          <Footer />
+        </Router>
+      
+      </main>
     </CookiesProvider>
   );
 }

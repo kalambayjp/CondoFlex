@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
 import "./nav.css";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
+import logo from "../../images/logo.png";
 import { useNavigate } from "react-router-dom";
 
 function Nav(props) {
@@ -10,7 +9,7 @@ function Nav(props) {
   let navigate = useNavigate();
   let user = props.user;
 
-  console.log("PPPPProp", props);
+
 
   const Logout = async () => {
     console.log("state ", state);

@@ -11,9 +11,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model buildings {
+
+  id Int    @id
+  amenities amenities[]
+  users users []
+
+  name          String
+  address       String
+  image         String
+}
+
 model users {
   id       Int        @id @default(autoincrement())
   bookings bookings[]
+
+  building buildings @relation(fields: [building_id], references: [id])
+  building_id Int @default(2000)
 
   first_name    String
   last_name     String
@@ -21,19 +35,10 @@ model users {
   password      String
   phone_number  Int
   unit_number   Int
-  building_code Int
+  
   is_admin      Boolean @default(false)
 }
 
-model buildings {
-  id        Int         @id
-  amenities amenities[]
-
-  building_code Int    @unique
-  name          String
-  address       String
-  image         String
-}
 
 model amenities {
   id       Int        @id @default(autoincrement())

@@ -20,28 +20,22 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-  console.log("REQBODYFORM123",req.body.formDetails)
   const {email, password}= req.body.formDetails
   
-
-  console.log("PASSSSSSSSSUSERRRRRRRRRR",password);
   const usersData = await users.findUnique({
     where:{
       email:email,
     }
   });
-  console.log("\n USERDATAAAAAAAAAA \n",usersData)
+
   let Logged="";
   let first_name=""
-  let building_code=""
+  let building_id=""
 
-  // console.log("PASSSSSSSSS",usersData.password)
-  //console.log("PASSSSSSSSSUSERRRRRRRRRR",password);
-  
   if((users)&&(usersData)&&(usersData.password===password)){
     first_name = usersData.first_name;
-    building_code = usersData.building_code;
-    // console.log("RRREQQQSESSION",req.session.user_id)
+    building_id = usersData.building_id;
+    userId = usersData.id
     Logged="Successful";
     console.log("Valid")
   }
@@ -50,8 +44,7 @@ router.post('/login', async (req, res) => {
     console.log("invalid")
   }
 
-  // console.log("USERDATAAAAAA",usersData)
-  res.json({firststname: first_name,building_code: building_code, Logged:Logged });
+  res.json({first_name: first_name,building_id: building_id, Logged:Logged, userId: userId});
   
 })
 
