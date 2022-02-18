@@ -85,14 +85,7 @@ router.post('/register', async (req, res) => {
       },
     })
   } catch (e) {
-    if (e instanceof Prisma.PrismaClientKnownRequestError) {
-      if (e.code === 'P2002') {
-        console.log(
-          'There is a unique constraint violation, a new user cannot be created with this email.'
-        )
-      }
-    }
-    throw e
+    console.log("Error: ",e);
   }
 
   const usersData = await users.findUnique({
@@ -104,13 +97,14 @@ router.post('/register', async (req, res) => {
   if ((usersData) && (usersData.email === userEmail)) {
     userId = usersData.id;
     userCreated = "Successful";
+  
     console.log("User Created: ",)
   }
   else {
     userCreated = "Unsuccessful";
   }
 
-  res.json({ userCreated: userCreated, userId: userId });
+  res.json({ userCreated: userCreated, userId: userId, firstName: firstName, buildingCode : buildingCode });
 
 })
 

@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./register.css";
 import { useNavigate } from "react-router-dom";
+import Popup from "../PopUp";
+
 
 function Register(props) {
 
-  const [error, setError] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+
   const [formData, updateFormData] = useState({
     first_name: "",
     last_name: "",
@@ -16,6 +20,10 @@ function Register(props) {
     unit_number: "",
     building_code: ""
   });
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleChange = (e) => {
     updateFormData({
@@ -32,26 +40,27 @@ function Register(props) {
         .post('http://localhost:8080/api/users/register', { formData })
         .then((res) => {
           const {
-            data: { userCreated, userId },
+            data: { userCreated, userId, firstName, buildingCode },
           } = res;
 
           // If user successfully created.
 
           if (userCreated === "Successful") {
             console.log(userId);
+            // setCookie('Name', id, { path: '/' });
+            localStorage.setItem("name", firstName);
+            localStorage.setItem("id", userId)
             navigate(`/`);
+
           } else {
-            setError("Please enter correct user information");
-            return navigate(`/register`);
+            setIsOpen(!isOpen);
+            // return  navigate(`/register`);
           }
         })
         .catch(err => {
           console.error(err);
         });
 
-    } else {
-      setError("Field cannot be blank.")
-      return;
     }
 
   };
@@ -141,7 +150,21 @@ function Register(props) {
 
         />  <br />
 
-        <section className="registration_validation">{error}</section>
+        <div>
+          {isOpen && (
+            <Popup
+              content={
+                <>
+                  <b>Wrong information. Please try again!</b>
+                </>
+              }
+              handleClose={togglePopup}
+            />
+          )}
+        </div>
+
+        <br />
+
 
         <button type="submit" id="btn_submit">
           Submit
