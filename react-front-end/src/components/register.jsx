@@ -64,7 +64,7 @@ function Register(props) {
       <h6>Register</h6>
       <form autoComplete="off" onSubmit={handleSubmit}>
 
-        <label for="First Name" id="title_label">First Name:</label>
+        <label for="First Name" id="title_label">First Name&nbsp; &nbsp;&nbsp; &nbsp;:</label>
         <input
           placeholder="First Name"
           type="text"
@@ -76,7 +76,7 @@ function Register(props) {
         /> <br />
 
 
-        <label for="Last Name" id="title_label">Last Name :</label>
+        <label for="Last Name" id="title_label">Last Name &nbsp; &nbsp;&nbsp; &nbsp;:</label>
         <input
           placeholder="Last Name"
           type="text"
@@ -87,7 +87,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Email" id="title_label">Email :</label>
+        <label for="Email" id="title_label">Email &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;:</label>
         <input
           placeholder="Email"
           type="text"
@@ -98,7 +98,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Password" id="title_label">Password :</label>
+        <label for="Password" id="title_label">Password &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;:</label>
         <input
           type="password"
           placeholder="Password"
@@ -131,7 +131,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Unit Number" id="title_label">Unit Number :</label>
+        <label for="Unit Number" id="title_label"> Unit Number &nbsp; &nbsp;:</label>
         <input
           placeholder="Unit Number"
           name="unit_number"
