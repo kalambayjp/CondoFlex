@@ -50,6 +50,7 @@ export default function Login(props) {
          
           // setCookie('Name', first_name, { path: '/' });
           localStorage.setItem("name", first_name);
+          localStorage.setItem("building_id",building_id)
           localStorage.setItem("id",user_id)
           navigate(`/${building_id}/amenities`);
 

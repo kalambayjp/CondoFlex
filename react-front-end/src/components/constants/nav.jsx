@@ -5,12 +5,17 @@ import "./nav.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import { useNavigate } from "react-router-dom";
+import { getMyBookings } from "../../helpers/dataFetching";
 
 function Nav(props) {
   const { state, setState } = props;
+
+  const user_id=localStorage.getItem("id");
+  const building_id=localStorage.getItem("building_id")
+  const amenitiesLink=`/${building_id}/amenities`
+  console.log("USERRRRRRR",user_id);
   let navigate = useNavigate();
-  const Login="/login";
-  const home="/"
+  
 
 
 
@@ -40,10 +45,20 @@ function Nav(props) {
                 <Link to="/register">
                   <button id="btn_nav">Register</button>
                 </Link>
+
+               
+                
+               
               </>
             ) : (
               <>
               <h3>Welcome, {localStorage.getItem("name")}</h3>
+              <Link to={amenitiesLink}>
+              <button id="btn_nav" >Amenities</button>
+              </Link>
+              <Link to="/my_bookings">
+              <button id="btn_nav" onClick={()=>getMyBookings(user_id)}>My Bookings</button>
+              </Link>
               <button type="submit" id="btn_nav" onClick={Logout}>
                 Logout
               </button>

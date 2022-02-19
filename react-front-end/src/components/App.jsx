@@ -6,6 +6,7 @@ import Footer from "./constants/footer";
 import Header from "./constants/header";
 import Register from "./login-register/register";
 import Login from "./login-register/Login";
+import MyBookings from "./my-bookings/MyBookings.jsx"
 import { useApplicationData } from "../hooks/useApplicationData";
 import AmenitiesList from "./amenity-list/AmenitiesList";
 import AmenityCalendar from "./calendar/AmenityCalendar";
@@ -109,6 +110,32 @@ export default function App() {
                           setSelectedDay={setSelectedDay} 
                           userId={userInfo.id}
                         />} 
+                      >
+
+                    </Route>
+                    </Route>
+
+
+
+
+                    <Route
+                      path="/my_bookings"
+                      exact
+                      element={<PrivateRoute/> }
+                      
+                    >
+                      <Route
+                        path="/my_bookings"
+                        exact
+      
+                        element={
+                          <MyBookings
+                            state={state}
+                            selectedAmenity={selectedAmenity}
+                            setSelectedAmenity={setSelectedAmenity}
+                            buildingId={userInfo.buildingId} 
+                          />
+                        }
                       >
 
                     </Route>
