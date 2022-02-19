@@ -41,7 +41,7 @@ Attentive property managers should know how to arrange for building amenities, a
 ## Final Product
 
 ### Main Page
-![Main](./react-front-end/src/images/main.png)
+![Main](./react-front-end/src/images/home.png)
 
 ### Amenities Booking Review
 ![Booking](./react-front-end/src/images/booking.png)
