@@ -76,6 +76,21 @@ router.get("/my_bookings", async (req, res) => {
 });
 
 
+router.delete("/delete", async (req, res) => {
+  const { booking_id} = req.query;
+  console.log("booking id -----> ",booking_id)
+  try {
+    const deleteBooking = await bookings.delete({
+      where: {
+        id: parseInt(booking_id),
+      },
+    });
+    res.json(deleteBooking);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 
 router.delete("/delete", async (req, res) => {
   const { booking_id} = req.query;

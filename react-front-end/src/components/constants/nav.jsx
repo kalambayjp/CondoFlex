@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./nav.css";
 
@@ -15,9 +15,8 @@ function Nav(props) {
   const amenitiesLink=`/${building_id}/amenities`
   console.log("USERRRRRRR",user_id);
   let navigate = useNavigate();
-  
 
-
+ 
 
   const Logout = async () => {
     const user = undefined;

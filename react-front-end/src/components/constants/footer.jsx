@@ -7,17 +7,17 @@ function Footer() {
     <footer>
       <div className="foot-One">
     <ul className="list-inline">
-        <li class="list-inline-item"><a href="/">Home</a></li>
-        <li class="list-inline-item"><a href="#">Services</a></li>
-        <li class="list-inline-item"><a href="#">About</a></li>
+        <li className="list-inline-item"><a href="/">Home</a></li>
+        <li className="list-inline-item"><a href="/">Services</a></li>
+        <li className="list-inline-item"><a href="/">About</a></li>
     </ul>
     </div>
     <div className="foot-One">
     <ul className="list-inline">
-    <li class="list-inline-item"><a href="#">Created By : </a></li>
-        <li class="list-inline-item"><a href="">JP Kalambay</a></li>
-        <li class="list-inline-item"><a href="#">Sanjoy Kumar</a></li>
-        <li class="list-inline-item"><a href="#">Clinton Omamohwo</a></li>
+    <li className="list-inline-item">Created By : </li>
+        <li className="list-inline-item">JP Kalambay</li>
+        <li className="list-inline-item">Sanjoy Kumar</li>
+        <li className="list-inline-item">Clinton Omamohwo</li>
     </ul>
     </div>
    
