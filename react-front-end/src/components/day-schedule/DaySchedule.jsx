@@ -15,7 +15,8 @@ export default function DaySchedule(props) {
     setRequestBooking, 
     submitBookingTime, 
     setSubmitBookingTime,
-    lastRequestTime
+    lastRequestTime,
+    setSum
   } = props;
 
   const dayFormatted = day.format("YYYY-MM-DD");
@@ -61,6 +62,7 @@ export default function DaySchedule(props) {
           setRequestBooking={setRequestBooking}
           submitBookingTime={submitBookingTime}
           setSubmitBookingTime={setSubmitBookingTime}
+          setSum={setSum}
         />)}
 
       </div>

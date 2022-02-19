@@ -12,7 +12,8 @@ export default function DayScheduleItem(props) {
     capacity, 
     setRequestBooking,
     submitBookingTime, 
-    setSubmitBookingTime 
+    setSubmitBookingTime,
+    setSum
   } = props;
 
   const displayTime = time.slice(16,21)
@@ -27,7 +28,10 @@ export default function DayScheduleItem(props) {
         if (ele[i] && ele[i].number_of_ppl){
           sum += ele[i].number_of_ppl 
         }
+        return setSum(sum)
       }
+
+      return setSum(0)
       
     });
 

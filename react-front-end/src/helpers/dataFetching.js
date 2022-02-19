@@ -1,7 +1,6 @@
 import axios from "axios";
 
 
-
 export const getBookingsForDay = async (selectedAmenity, dayFormatted) => {
   try {
 
@@ -16,8 +15,7 @@ export const getBookingsForDay = async (selectedAmenity, dayFormatted) => {
 }
 
 export function getbuildingAmenities(state, buildingId) {
-  console.log(state, buildingId)
   const buildingAmenities = state.amenities.filter(amenity => amenity.building_id === parseInt(buildingId));
-  console.log(buildingAmenities, state, buildingId);
+  
   return buildingAmenities;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./nav.css";
 
@@ -9,11 +9,7 @@ import { useNavigate } from "react-router-dom";
 function Nav(props) {
   const { state, setState } = props;
   let navigate = useNavigate();
-  const Login="/login";
-  const home="/"
-
-
-
+ 
   const Logout = async () => {
     const user = undefined;
     setState({ ...state, user });
