@@ -120,7 +120,7 @@ export default function App() {
                             state={state}
                             selectedAmenity={selectedAmenity}
                             setSelectedAmenity={setSelectedAmenity}
-                            buildingId={userInfo.buildingId} 
+                            //buildingId={userInfo.buildingId} 
                           />
                         }
                       >
