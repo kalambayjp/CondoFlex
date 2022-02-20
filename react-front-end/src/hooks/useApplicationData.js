@@ -12,7 +12,7 @@ export function useApplicationData() {
   });
 
   const getDataFromBackend = async () => {
-  console.log("AAAAAAAAAABBBBBCCCC")
+
     return Promise.all([
       // Get requests to to assign data to state
       axios.get("http://localhost:8080/api/buildings"),
@@ -22,7 +22,6 @@ export function useApplicationData() {
 
     ])
       .then((all) => {
-        console.log("All Data:",all)
 
         setState((prev) => ({
           ...prev,
@@ -32,7 +31,7 @@ export function useApplicationData() {
           // bookings: all[3].data,
         }));
       })
-      .catch((err) => console.log("ERRORRRR",err));
+      .catch((err) => console.log("error --->",err));
 
       
   };

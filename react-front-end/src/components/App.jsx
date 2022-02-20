@@ -6,14 +6,15 @@ import Footer from "./constants/footer";
 import Header from "./constants/header";
 import Register from "./login-register/register";
 import Login from "./login-register/Login";
+import MyBookings from "./my-bookings/MyBookings.jsx"
 import { useApplicationData } from "../hooks/useApplicationData";
 import AmenitiesList from "./amenity-list/AmenitiesList";
 import AmenityCalendar from "./calendar/AmenityCalendar";
 import { CookiesProvider } from "react-cookie";
 import moment from "moment";
-import { lazy } from "react";
+// import { lazy } from "react";
 import PrivateRoute from "../privateroute/PrivateRoute";
-import Home from "./Home";
+import Home from "./Home.jsx";
 
 
 export default function App() {
@@ -21,16 +22,6 @@ export default function App() {
   const [selectedDay, setSelectedDay] = useState(moment());
   const [selectedAmenity, setSelectedAmenity] = useState();
   const [LoggedIn, setLoggedIn] = useState(true);
-
-  const login="/login";
-  const home="/";
-
-  let userInfo = {};
-  if (state.user) {
-    userInfo = state.user
-    console.log("user info has been set", userInfo);
-  }
-
 
 
   useEffect(() => {
@@ -40,7 +31,7 @@ export default function App() {
   }, []);
  
   return (
-    <body>
+ 
       <CookiesProvider>
         <main>
           <Router>
@@ -81,18 +72,16 @@ export default function App() {
                       <Route
                         path="/:building_id/amenities"
                         exact
-      
                         element={
                           <AmenitiesList
                             state={state}
                             selectedAmenity={selectedAmenity}
                             setSelectedAmenity={setSelectedAmenity}
-                            buildingId={userInfo.buildingId} 
                           />
                         }
                       >
 
-                    </Route>
+                      </Route>
                     </Route>
 
 
@@ -107,8 +96,33 @@ export default function App() {
                         element={<AmenityCalendar 
                           selectedDay={selectedDay} 
                           setSelectedDay={setSelectedDay} 
-                          userId={userInfo.id}
                         />} 
+                      >
+
+                      </Route>
+                    </Route>
+
+
+
+
+                    <Route
+                      path="/my_bookings"
+                      exact
+                      element={<PrivateRoute/> }
+                      
+                    >
+                      <Route
+                        path="/my_bookings"
+                        exact
+      
+                        element={
+                          <MyBookings
+                            state={state}
+                            selectedAmenity={selectedAmenity}
+                            setSelectedAmenity={setSelectedAmenity}
+                            buildingId={userInfo.buildingId} 
+                          />
+                        }
                       >
 
                     </Route>
@@ -120,11 +134,12 @@ export default function App() {
             <br />
 
             <Footer />
+            
           </Router>
         
         </main>
       </CookiesProvider>
-    </body>
+  
   );
 }
 

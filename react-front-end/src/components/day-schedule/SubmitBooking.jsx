@@ -4,13 +4,21 @@ import axios from "axios"
 
 
 export function SubmitBooking(props) {
-  const { submitBookingTime, selectedAmenity,  userId, setLastRequestTime } = props;
+  const { submitBookingTime, selectedAmenity, setLastRequestTime, sum, capacity } = props;
   const [numOfPpl, setNumOfPpl] = useState(0)
-  
-  // axios.get(
-  //   `http://localhost:8080/api/bookings?amenityId=${selectedAmenity}&date=${dayFormatted}`
-  // )
+  const userId = localStorage.getItem("id");
+
   const createBooking = async (submitBookingTime, selectedAmenity, numOfPpl, userId) => {
+    // console.log("booking time at submit", submitBookingTime );
+    // console.log("sum", sum)
+    // console.log("numOfPpl", numOfPpl);
+    // console.log("capacity", capacity);
+    // console.log(numOfPpl + sum);
+
+    // if (parseInt(sum) + parseInt(numOfPpl) > capacity) {
+    //   console.log("Error this booking surpasses the capacity")
+    //   return
+    // }
 
     try {
       const myBooking = await axios.post(
