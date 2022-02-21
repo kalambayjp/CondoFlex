@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
 
 router.post('/register', async (req, res) => {
   console.log("Register Data:", req.body.formData)
-  const { first_name, last_name, email, password, phone_number, unit_number, building_code } = req.body.formData
+  const { first_name, last_name, email, password, phone_number, unit_number, building_id } = req.body.formData
 
   const firstName = first_name;
   const lastName = last_name;
@@ -68,7 +68,7 @@ router.post('/register', async (req, res) => {
   const userPassword = password;
   const phoneNumber = Number.parseInt(phone_number);
   const unitNumber = Number.parseInt(unit_number);
-  const buildingCode = Number.parseInt(building_code);
+  const building_id = Number.parseInt(building_id);
   let userCreated = "";
   let userId = 0;
 
@@ -81,7 +81,7 @@ router.post('/register', async (req, res) => {
         password: userPassword,
         phone_number: phoneNumber,
         unit_number: unitNumber,
-        building_id: buildingCode
+        building_id: building_id
       },
     })
   } catch (e) {
@@ -104,7 +104,7 @@ router.post('/register', async (req, res) => {
     userCreated = "Unsuccessful";
   }
 
-  res.json({ userCreated: userCreated, userId: userId, firstName: firstName, buildingCode : buildingCode });
+  res.json({ userCreated: userCreated, userId: userId, firstName: firstName, building_id : building_id });
 
 })
 

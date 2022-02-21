@@ -18,7 +18,7 @@ function Register(props) {
     password: "",
     phone_number: "",
     unit_number: "",
-    building_code: ""
+    building_id: ""
   });
 
   const togglePopup = () => {
@@ -35,12 +35,12 @@ function Register(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData);
-    if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_code && formData.unit_number) {
+    if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_id && formData.unit_number) {
       axios
         .post('http://localhost:8080/api/users/register', { formData })
         .then((res) => {
           const {
-            data: { userCreated, userId, firstName, buildingCode },
+            data: { userCreated, userId, firstName, building_id },
           } = res;
 
           // If user successfully created.
@@ -133,9 +133,9 @@ function Register(props) {
         <label for="Building Code" id="title_label">Building Code :</label>
         <input
           placeholder="Building Code"
-          name="building_code"
+          name="building_id"
           onChange={handleChange}
-          value={formData.building_code}
+          value={formData.building_id}
           required
 
         />  <br />
