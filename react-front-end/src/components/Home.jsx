@@ -1,17 +1,20 @@
 import React from "react";
-import "./popup.css";
-
-const Popup = (props) => {
+import "./home.css"
+import imgone from "../images/home1.jpg";
+import imgtwo from "../images/home2.jpg";
+import imgthree from "../images/home3.jpg";
+const Home = (props) => {
   return (
+    
     <div className="homeContainer">
       <div className="ContainerOne">
         <section>
           <article>
-            <h1>London</h1>
+            <h1>Book your amenities on the go.</h1>
             <p>
-              London is the capital city of England. It is the most populous
-              city in the United Kingdom, with a metropolitan area of over 13
-              million inhabitants.
+              Welcome to Condoflex, with this application you can easily register and 
+              start booking your condominium amenities on the go. Its fast and easy to navigate.
+              Join the flex zone now!
             </p>
             <p>
               Standing on the River Thames, London has been a major settlement
@@ -22,36 +25,15 @@ const Popup = (props) => {
         </section>
       </div>
       <div className="ImgOne">
-        <section>
-          <article>
-            <h1>London</h1>
-            <p>
-              London is the capital city of England. It is the most populous
-              city in the United Kingdom, with a metropolitan area of over 13
-              million inhabitants.
-            </p>
-            <p>
-              Standing on the River Thames, London has been a major settlement
-              for two millennia, its history going back to its founding by the
-              Romans, who named it Londinium.
-            </p>
-          </article>
-        </section>
+            
+            <img src={imgone} href="/" alt="Condo Flex" />
       </div>
 
       <div className="ImgTwo">
       <article>
-            <h1>London</h1>
-            <p>
-              London is the capital city of England. It is the most populous
-              city in the United Kingdom, with a metropolitan area of over 13
-              million inhabitants.
-            </p>
-            <p>
-              Standing on the River Thames, London has been a major settlement
-              for two millennia, its history going back to its founding by the
-              Romans, who named it Londinium.
-            </p>
+      <img  src={imgtwo} href="/" alt="Condo Flex" />
+      <img src={imgthree} href="/" alt="Condo Flex" />
+            
           </article>
       </div>
 
@@ -59,23 +41,28 @@ const Popup = (props) => {
       <div className="ContainerTwo">
         <section>
           <article>
-            <h1>London</h1>
+            <h1>Record Keeping</h1>
             <p>
-              London is the capital city of England. It is the most populous
-              city in the United Kingdom, with a metropolitan area of over 13
-              million inhabitants.
+            Get rid of manual processess of keeping records and paper pileups. 
+            Enjoy better organization and consistency using digital forms and documents.
+            U
             </p>
             <p>
-              Standing on the River Thames, London has been a major settlement
-              for two millennia, its history going back to its founding by the
-              Romans, who named it Londinium.
+            Get rid of manual processess of keeping records and paper pileups. 
+            Enjoy better organization and consistency using digital forms and documents.
+            U 
+            Get rid of manual processess of keeping records and paper pileups. 
+            Enjoy better organization and consistency using digital forms and documents.
+            U
             </p>
+   
           </article>
         </section>
       </div>
 
     </div>
+   
   );
 };
 
-export default Popup;
+export default Home;

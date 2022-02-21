@@ -1,21 +1,20 @@
 .schedule-times {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
-
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 18em;
-  text-align: center;
  
-  
 }
-.day-schedule {
-  width: 40em;
+div.day-schedule {
+  position: relative;
+  height: auto;
+  margin: 0px;
 }
-
 .selected {
   background-color: rgb(218, 17, 17);
+}
+
+form{
+  width: 50%;
+}
+
+form button{
+  width: 35%;
+
 }

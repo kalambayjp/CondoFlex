@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./register.css";
 import { useNavigate } from "react-router-dom";
+import Popup from "../PopUp";
+
 
 function Register(props) {
 
-  const [error, setError] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+
   const [formData, updateFormData] = useState({
     first_name: "",
     last_name: "",
@@ -14,8 +18,12 @@ function Register(props) {
     password: "",
     phone_number: "",
     unit_number: "",
-    building_code: ""
+    building_id: ""
   });
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleChange = (e) => {
     updateFormData({
@@ -27,31 +35,32 @@ function Register(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData);
-    if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_code && formData.unit_number) {
+    if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_id && formData.unit_number) {
       axios
         .post('http://localhost:8080/api/users/register', { formData })
         .then((res) => {
           const {
-            data: { userCreated, userId },
+            data: { userCreated, userId, firstName, buildingCode },
           } = res;
 
           // If user successfully created.
 
           if (userCreated === "Successful") {
             console.log(userId);
-            navigate(`/login`);
+            // setCookie('Name', id, { path: '/' });
+            localStorage.setItem("name", firstName);
+            localStorage.setItem("id", userId)
+            navigate(`/`);
+
           } else {
-            setError("Please enter correct user information");
-            return navigate(`/register`);
+            setIsOpen(!isOpen);
+            // return  navigate(`/register`);
           }
         })
         .catch(err => {
           console.error(err);
         });
 
-    } else {
-      setError("Field cannot be blank.")
-      return;
     }
 
   };
@@ -64,7 +73,7 @@ function Register(props) {
       <h6>Register</h6>
       <form autoComplete="off" onSubmit={handleSubmit}>
 
-        <label for="First Name" id="title_label">First Name:</label>
+        <label for="First Name" id="title_label">First Name&nbsp; &nbsp;&nbsp; &nbsp;:</label>
         <input
           placeholder="First Name"
           type="text"
@@ -76,7 +85,7 @@ function Register(props) {
         /> <br />
 
 
-        <label for="Last Name" id="title_label">Last Name :</label>
+        <label for="Last Name" id="title_label">Last Name &nbsp; &nbsp;&nbsp; &nbsp;:</label>
         <input
           placeholder="Last Name"
           type="text"
@@ -87,7 +96,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Email" id="title_label">Email :</label>
+        <label for="Email" id="title_label">Email &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;:</label>
         <input
           placeholder="Email"
           type="text"
@@ -98,7 +107,7 @@ function Register(props) {
 
         />  <br />
 
-        <label for="Password" id="title_label">Password :</label>
+        <label for="Password" id="title_label">Password &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;:</label>
         <input
           type="password"
           placeholder="Password"
@@ -124,14 +133,14 @@ function Register(props) {
         <label for="Building Code" id="title_label">Building Code :</label>
         <input
           placeholder="Building Code"
-          name="building_code"
+          name="building_id"
           onChange={handleChange}
-          value={formData.building_code}
+          value={formData.building_id}
           required
 
         />  <br />
 
-        <label for="Unit Number" id="title_label">Unit Number :</label>
+        <label for="Unit Number" id="title_label"> Unit Number &nbsp; &nbsp;:</label>
         <input
           placeholder="Unit Number"
           name="unit_number"
@@ -141,7 +150,21 @@ function Register(props) {
 
         />  <br />
 
-        <section className="registration_validation">{error}</section>
+        <div>
+          {isOpen && (
+            <Popup
+              content={
+                <>
+                  <b>Wrong information. Please try again!</b>
+                </>
+              }
+              handleClose={togglePopup}
+            />
+          )}
+        </div>
+
+        <br />
+
 
         <button type="submit" id="btn_submit">
           Submit

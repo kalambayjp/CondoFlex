@@ -60,15 +60,15 @@ router.post('/login', async (req, res) => {
 
 router.post('/register', async (req, res) => {
   console.log("Register Data:", req.body.formData)
-  const { first_name, last_name, email, password, phone_number, unit_number, building_code } = req.body.formData
+  const { first_name, last_name, email, password, phone_number, unit_number, building_id } = req.body.formData
 
   const firstName = first_name;
   const lastName = last_name;
   const userEmail = email;
   const userPassword = password;
-  const phoneNumber = phone_number;
+  const phoneNumber = Number.parseInt(phone_number);
   const unitNumber = Number.parseInt(unit_number);
-  const buildingCode = Number.parseInt(building_code);
+  const buildingCode = Number.parseInt(building_id);
   let userCreated = "";
   let userId = 0;
 
@@ -81,18 +81,11 @@ router.post('/register', async (req, res) => {
         password: userPassword,
         phone_number: phoneNumber,
         unit_number: unitNumber,
-        building_code: buildingCode
+        building_id: buildingCode
       },
     })
   } catch (e) {
-    if (e instanceof Prisma.PrismaClientKnownRequestError) {
-      if (e.code === 'P2002') {
-        console.log(
-          'There is a unique constraint violation, a new user cannot be created with this email.'
-        )
-      }
-    }
-    throw e
+    console.log("Error: ",e);
   }
 
   const usersData = await users.findUnique({
@@ -104,13 +97,14 @@ router.post('/register', async (req, res) => {
   if ((usersData) && (usersData.email === userEmail)) {
     userId = usersData.id;
     userCreated = "Successful";
+  
     console.log("User Created: ",)
   }
   else {
     userCreated = "Unsuccessful";
   }
 
-  res.json({ userCreated: userCreated, userId: userId });
+  res.json({ userCreated: userCreated, userId: userId, firstName: firstName, buildingCode : buildingCode });
 
 })
 

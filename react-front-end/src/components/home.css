@@ -1,18 +1,118 @@
-/* .homeContainer{
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: DodgerBlue;
+.homeContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.ContainerOne{
-  bottom: 30%;
-background-color: white;
-width: 70%;
+.ContainerOne {
+  margin: 2%;
+    bottom: 30%;
+    color: black;
+    margin-left: 10%;
+    opacity: 0.95;
+    border-radius: 20px;
+    width: 80%;
+    height: 60%;
+    margin-bottom: 5%;
+    background-color: rgba(255, 255, 255, 0.87);
+  }
+  .ImgOne img {
+    margin: 2%;
+    width: 80%;
+    height: 70%;
+    border-radius: 20px;
+    box-shadow: inset 4px 4px rgba(21, 40, 180, 0);
+  }
+  header.head {
+    margin: 5px;
+    padding: 2px;
+  }
+
+  .ImgTwo img {
+    margin: 2%;
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: inset 4px 4px rgba(21, 40, 180, 0);
+  }
+  .ImgOne img {
+    pointer-events: none; 
+  }
+
+  .ImgTwo img {
+    pointer-events: none; 
+  }
+
+  .ContainerTwo {
+    float: right;
+    bottom: 30%;
+    color: black;
+    opacity: 0.95;
+    border-radius: 20px;
+    width: 85%;
+    height: 60%;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  p {
+    font-size: 11px;
+  }
+  h1 {
+    font-size: 14px;
+  }
+
+
+
+@media screen and (max-width: 500px) {
+  .ContainerOne {
+    bottom: 30%;
+    color: black;
+    margin-left: 10%;
+    opacity: 0.95;
+    border-radius: 20px;
+    width: 80%;
+    height: 100%;
+    margin-bottom: 5%;
+    background-color: rgba(255, 255, 255, 0.87);
+  }
+  .ImgOne img {
+    margin: 2%;
+    width: 90%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: inset 4px 4px rgba(21, 40, 180, 0);
+  }
+  header.head {
+    margin: 5px;
+    padding: 2px;
+  }
+
+  .ImgTwo img {
+    margin-top: 10px;
+    width: 180px;
+    /* height: 160%; */
+    border-radius: 20px;
+    justify-items: center;
+    box-shadow: inset 4px 4px rgba(21, 40, 180, 0);
+  }
+
+  .ContainerTwo {
+    float: right;
+    bottom: 30%;
+    color: black;
+    padding: 10px;
+    opacity: 0.95;
+    width: 85%;
+    height: 90%;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  p {
+    font-size: 11px;
+  }
+  h1 {
+    font-size: 14px;
+  }
 }
-
-.ContainerTwo{
-  display: flexbox;
-  background-color: white;
-  width: 70%;
-
-} */
