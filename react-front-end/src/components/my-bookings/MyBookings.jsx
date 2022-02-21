@@ -23,7 +23,7 @@ export default function MyBookings(props) {
 
     
   };
-  console.log("BOOOOOOOOOOOKKKK", bookings);
+
   // const currentDate=moment().format("YYYY-MM-DD-HH:mm")
   // console.log("CCCCCCCCC",currentDate);
   const fetchBooking = (bookings) => {
@@ -39,9 +39,10 @@ export default function MyBookings(props) {
 
   return (
     <>
-      <h1>My Bookings</h1>
+      
 
       <div>
+      <h4>My Bookings</h4>
         <div className="table-bookings">
           <table>
             <tr>

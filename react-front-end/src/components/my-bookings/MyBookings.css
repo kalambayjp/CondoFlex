@@ -4,11 +4,16 @@ table {
   width: 100%;
   background-color: white;
   padding: 7%;
-
-
-
+  margin-top: 20%;
+  margin-bottom: 60%;
 }
-
+h4{
+  margin-top: 5%;
+  font-size: 60px;
+  font-family: Papyrus;
+  text-shadow: 5px 5px 5px rgba(2, 2, 73, 0.726);
+  text-align: center;
+}
 td, th {
   margin:20%;
   border: 1px solid #dddddd;
@@ -32,4 +37,26 @@ margin-left: 3%;
   width: 40%;
   box-shadow: 1px 1px #88888800;
 
+}
+
+@media screen and (max-width:500px) {
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    position: relative;
+    margin-left: 20px;
+    background-color: white;
+    padding: 7%;
+    
+  }
+  #delete-btn{
+    background-color: rgba(255, 0, 0, 0.815);
+    width: 50px;
+    height: 30px;
+    font-size: 13px;
+    box-shadow: 1px 1px #88888800;
+  
+  }
+  
 }

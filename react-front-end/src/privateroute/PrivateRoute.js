@@ -9,7 +9,7 @@ const PrivateRoute = (props) => {
 
     // If authorized, return an outlet that will render child elements
     // If not, return element that will navigate to login page
-    return Auth ? <Outlet /> : <Navigate to="/home" />;
+    return Auth ? <Outlet /> : <Navigate to="/" />;
 }
 
 export default PrivateRoute;
