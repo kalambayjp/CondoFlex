@@ -53,7 +53,7 @@ export default function AmenityCalendar(props) {
 
   return (
     <section>
-      <div className="calendar">
+      <div className="calendar" >
 
         {daySchedule && 
           <DaySchedule 

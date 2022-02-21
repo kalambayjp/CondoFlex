@@ -9,6 +9,7 @@ div.calendar {
   display: flex;
   align-items: center;
   width:50%;
+  /* height: 70%; */
   background: rgb(255, 255, 255);
   border-radius: 20%;
   margin: 20%;
@@ -22,6 +23,8 @@ div.calendar-header {
 }
 div.day{
   top: 40%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 div.display-time {
@@ -112,26 +115,7 @@ p {
   font-size: 10px;
 }
 
-/* @font-face {
-  font-family: "AirbnbCerealLight";
-  src: url(/fonts/AirbnbCerealLight.woff);
-}
-@font-face {
-  font-family: "AirbnbCerealBook";
-  src: url(/fonts/AirbnbCerealLight.woff);
-}
-@font-face {
-  font-family: "AirbnbCerealMedium";
-  src: url(/fonts/AirbnbCerealLight.woff);
-}
-@font-face {
-  font-family: "AirbnbCerealBold";
-  src: url(/fonts/AirbnbCerealLight.woff);
-}
-@font-face {
-  font-family: "AirbnbCerealBlack";
-  src: url(/fonts/AirbnbCerealLight.woff);
-} */
+
 content {
   width: 40em;
   height: 30em;
@@ -165,4 +149,82 @@ content {
 }
 .calendar-body {
   height:auto;
+border-radius: 40px;
+  
+}
+
+@media only screen and (max-width: 508px) {
+  div.calendar {
+    position: relative;
+    width: 77%;
+    /* top: -10px; */
+    left: -9%;
+    top: 60px;
+    height: 300px;
+    margin-left: 18%;
+
+    }
+    div.calendar-header {
+      visibility: hidden;
+    }
+    
+    div.day-schedule {
+  
+    }
+    div.schedule-times {
+      position: relative;
+      font-size: 12px;
+      border-radius: 5%;
+      border: 2px solid gold;
+      padding: 0px;
+      background: rgb(255, 255, 255);
+      top: -159px;
+      margin-bottom: 36%;
+      right: 6.8%;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      /* width: calc(100% / 9); */
+      width: 100%;
+      height: 120%;
+    }
+    div.display-time {
+      /* display: grid; */
+      position: relative;
+      size: 20%;
+      left: 10%;
+      height: 40%;
+      grid-column-gap: 10em;
+      grid-row-gap: 10em;
+      width: 90%;
+      margin: 1px;
+      border-radius: 20%;
+    }
+    div.calendar-body {
+      position: relative;
+      align-items: center;
+      width:290px;
+      top: -200px;
+      left: -20%;
+      background: rgb(255, 255, 255);
+      border-radius: 20%;
+      margin: 20%;
+      grid-template-rows: 10rem auto 8rem;
+      /* box-shadow: 1rem 4px 8px rgba(49, 49, 49, 0.76); */
+      cursor: pointer;
+      
+    }
+    div.Week{
+      font-size: 17px;
+    }
+    .submit-booking form {
+      position: relative;
+      bottom: 30%;
+      left: 30px;
+    }
+    div.day-schedule header {
+    font-size: 13px;
+    width: 25%;
+    position: relative;
+    bottom: -15px;
+    }
 }

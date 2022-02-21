@@ -26,8 +26,6 @@
 }
 
 
-
-
 .copyright{
   position: relative;
   margin-top:2%;
@@ -37,7 +35,6 @@
   font-size:20px;
   color:rgb(0, 11, 77);
   margin-bottom:0;
-  left: 60%;
 }
 #logo2 img{
 
@@ -52,12 +49,68 @@
 
 }
 .foot-One{
-  margin: 1%;
+  margin: 2%;
 }
 
 @media (max-width: 768px) {
   .footer-clean .item.social {
     text-align:center;
   }
+  p.copyright{
+    text-size-adjust: 20px;
+    font-size:20px;
+    color:rgb(0, 11, 77);
+    margin-bottom:0;
+    float: left;
+  }
 }
+@media screen and (max-width: 500px) {
+  /* Phone and mobile */
+  
+  #logo2 img{
 
+    bottom: 200%;
+    border-radius: 50px 50px 0px 0px;
+    box-shadow: inset 3px 3px 9px rgb(70, 70, 70);
+    width: 40%;
+    margin-top: 20%;
+    height: 25%;
+    float: right;
+    opacity: 0.95; 
+  
+  }
+  .foot-One{
+    margin: 1%;
+    display: flex;
+    font-size: 1px;
+  }
+
+  footer{
+    width: 100%;
+  }
+  .list-inline{
+    width: 90px;
+    text-size-adjust: 20px;
+    font-size:9px;
+    float: left;
+  }
+  .list-inline-item{
+    width: 90px;
+    text-size-adjust: 20px;
+    font-size:9px;
+    float: left;
+  }
+  p.copyright{
+    text-size-adjust: 20px;
+    font-size:10px;
+    color:rgb(0, 11, 77);
+    margin:10px;
+    bottom: -13px;
+    float: left;
+  }
+  a{
+    font-size: 11px;
+    color: black;
+    font-weight: bold;
+  }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./nav.css";
 
@@ -15,8 +15,7 @@ function Nav(props) {
   const amenitiesLink=`/${building_id}/amenities`
   console.log("USERRRRRRR",user_id);
   let navigate = useNavigate();
-
- 
+  
 
   const Logout = async () => {
     const user = undefined;
@@ -37,7 +36,6 @@ function Nav(props) {
             {!localStorage.getItem("name") ? (
               <>
               
-              
                 <Link to="/login">
                   <button id="btn_nav">Login</button>
                 </Link>
@@ -46,19 +44,17 @@ function Nav(props) {
                 </Link>
 
                
-                
-               
               </>
             ) : (
               <>
               <h3>Welcome, {localStorage.getItem("name")}</h3>
               <Link to={amenitiesLink}>
-              <button id="btn_nav" >Amenities</button>
+              <button id="btn_navA" >Amenities</button>
               </Link>
               <Link to="/my_bookings">
-              <button id="btn_nav" onClick={()=>getMyBookings(user_id)}>My Bookings</button>
+              <button id="btn_navB" onClick={()=>getMyBookings(user_id)}>Bookings</button>
               </Link>
-              <button type="submit" id="btn_nav" onClick={Logout}>
+              <button type="submit" id="btn_navL" onClick={Logout}>
                 Logout
               </button>
               </>

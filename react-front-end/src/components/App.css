@@ -11,13 +11,8 @@ main {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   
 }
-footer{
-  width: 20%;
-}
-
 
 /* appear - on page load */
 .fade-appear {
@@ -48,43 +43,7 @@ footer{
 .fade-exit-done {
   opacity: 0;
 }
-.homeContainer{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
 
-
-.ContainerOne{
-  bottom: 30%;
-  color: black;
-opacity: 0.95; 
-width: 90%;
-margin-bottom: 5%;
-margin-left: 5%;
-background-color: rgba(255, 255, 255, 0.651);
-}
-.ImgOne{
-  margin-right: 2%;
-  width: 50%;
-  
-}
-
-.ImgTwo{
-  margin-left: 5%;
-  width: 40%;
-}
-
-
-
-.ContainerTwo{
-  float: right;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.699);
-  width: 90%;
-  opacity: 0.99; 
-  margin-left: 5%;
-
-}
 /* .page-content {
   padding-top: 5em;
   display: flex;
@@ -97,7 +56,7 @@ background-color: rgba(255, 255, 255, 0.651);
 
 
 
-@media only screen and (max-width: 908px) {
+@media only screen and (max-width: 508px) {
   /* For mobile phones: */
  nav {
     width: 100%;
@@ -108,6 +67,9 @@ background-color: rgba(255, 255, 255, 0.651);
  
   }
   body {
+    width: 100%;
+    height: 100%;
+    
   
   
   }
