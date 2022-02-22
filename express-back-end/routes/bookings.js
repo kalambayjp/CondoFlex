@@ -65,6 +65,9 @@ router.get("/my_bookings", async (req, res) => {
             name:true
           }
         }
+      }, 
+      orderBy: {
+        start_time: 'asc'
       }
       
     });
