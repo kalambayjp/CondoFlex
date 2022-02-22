@@ -51,6 +51,7 @@ function Register(props) {
             // setCookie('Name', id, { path: '/' });
             localStorage.setItem("name", firstName);
             localStorage.setItem("id", userId)
+            localStorage.setItem("building_id", buildingCode)
             navigate(`/`);
           } else {
             setIsOpen(!isOpen);
