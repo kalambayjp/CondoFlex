@@ -16,6 +16,7 @@ export default function AmenitiesList(props) {
     const link = `/${amenity.building_id}/${amenity.id}/calendar`;
 
     return (
+      <div className="text">
       <Link to={link} key={amenity.id}>
         <AmenityItem 
           {...amenity} 
@@ -23,6 +24,7 @@ export default function AmenitiesList(props) {
           setSelectedAmenity={setSelectedAmenity} 
         />
       </Link>
+      </div>
     )
   });
 

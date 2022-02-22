@@ -1,10 +1,9 @@
-.schedule-times {
- 
-}
+
 div.day-schedule {
   position: relative;
   height: auto;
   margin: 0px;
+
 }
 .selected {
   background-color: rgb(218, 17, 17);
@@ -17,4 +16,12 @@ form{
 form button{
   width: 35%;
 
+}
+button:hover{
+  background: rgb(2, 2, 73);
+  transition: 0.5s;
+  transform: scale(0.8);
+  align-content: center;
+  align-self: center;
+  box-shadow: 1px 1px #88888800;
 }
