@@ -6,11 +6,18 @@
   row-gap: 15px;
 }
 
-@media screen and (max-width:500px) {
+div.text{
+  text-decoration: none;
+}
+
+@media screen and  (max-width: 550px) and (min-width: 375px) {
   .building-amenities {
     display: grid;
     grid-template-columns:repeat(1, 1fr);
     column-gap: 10px;
     row-gap: 15px;
+  }
+  Link{
+    text-decoration: none;
   }
 }

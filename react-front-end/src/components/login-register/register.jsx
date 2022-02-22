@@ -47,11 +47,11 @@ function Register(props) {
 
           if (userCreated === "Successful") {
             console.log(userId);
+
             // setCookie('Name', id, { path: '/' });
             localStorage.setItem("name", firstName);
             localStorage.setItem("id", userId)
             navigate(`/`);
-
           } else {
             setIsOpen(!isOpen);
             // return  navigate(`/register`);
