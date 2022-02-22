@@ -1,0 +1,38 @@
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  background: #a18900;
+  width: 2%;
+  height: 15px;
+  opacity: 80%;
+  top: 43%;
+  left: 65%;
+  border-radius: 20%;
+  position: absolute;
+  text-align: center;
+  border: 1px solid rgb(227, 231, 214);
+  font-size: 10px;
+} 
+
+.popup .popuptext {
+  background-color: #9e8b22;
+  color: #fff;
+  text-align: center;
+  font-size: 80%;
+  border-radius: 5%;
+  width: 38%;
+  opacity: 80%;
+  padding: 8px;
+  top: 45%;
+  position: absolute;
+
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}

@@ -10,7 +10,7 @@ export default function MyBookings(props) {
   const [count, setCount] = React.useState(0);
 
   const deleteBooking = (booking_id) => {
- 
+  
     axios
     .delete(`http://localhost:8080/api/bookings/delete?booking_id=${booking_id}`)
     .then((res)=>{
@@ -20,9 +20,10 @@ export default function MyBookings(props) {
       setBookings(updatedBookings)
     })
     .catch(err =>console.log(err))
-
-    
   };
+
+
+
 
   // const currentDate=moment().format("YYYY-MM-DD-HH:mm")
   // console.log("CCCCCCCCC",currentDate);
