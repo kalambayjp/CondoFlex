@@ -19,7 +19,8 @@ div.calendar {
   cursor: pointer;
 }
 div.calendar-header {
-  visibility: hidden;
+  /* visibility: hidden; */
+  margin: 2px auto;
 }
 div.day{
   top: 40%;
@@ -170,7 +171,7 @@ border-radius: 40px;
 
     }
     div.calendar-header {
-      visibility: hidden;
+      /* visibility: hidden; */
       display: none;
     }
     

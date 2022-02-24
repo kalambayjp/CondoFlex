@@ -1,22 +1,23 @@
 .homeContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto;
 }
 
 .ContainerOne {
   margin: 2%;
     bottom: 30%;
     color: black;
-    margin-left: 10%;
+    margin-left: 2%;
     opacity: 0.95;
     border-radius: 20px;
-    width: 80%;
-    height: 60%;
     margin-bottom: 5%;
     background-color: rgba(255, 255, 255, 0.87);
   }
   .ImgOne img {
+    float: right;
     margin: 2%;
+    margin-right: 40px;
+    margin-top: 40px;
     width: 80%;
     height: 70%;
     border-radius: 20px;
@@ -27,10 +28,14 @@
     padding: 2px;
   }
 
+
   .ImgTwo img {
+    float: right;
     margin: 2%;
+    margin-right: 40px;
+    margin-top: 40px;
     width: 80%;
-    height: 100%;
+    height: 30%;
     border-radius: 20px;
     box-shadow: inset 4px 4px rgba(21, 40, 180, 0);
   }
@@ -43,42 +48,50 @@
   }
 
   .ContainerTwo {
-    float: right;
+    margin: 2%;
     bottom: 30%;
     color: black;
+    margin-left: 2%;
     opacity: 0.95;
     border-radius: 20px;
-    width: 85%;
-    height: 60%;
-    margin-bottom: 30px;
-    background-color: rgb(255, 255, 255);
+    margin-bottom: 5%;
+    background-color: rgba(255, 255, 255, 0.87);
   }
 
-  p {
-    font-size: 11px;
+  .homep {
+    font-size: 40px;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
   }
-  h1 {
-    font-size: 14px;
+.home1 {
+    font-size: 70px;
+    font-weight: 300px;
+    padding: 20px;
+    font-family: papyrus;
   }
 
 
 
 @media screen and (max-width: 500px) {
+  .homeContainer {
+    display: grid;
+    grid-template-columns: auto;
+  }
   .ContainerOne {
+    margin: 2% auto;
     bottom: 30%;
     color: black;
-    margin-left: 10%;
+    padding: 10px;
     opacity: 0.95;
-    border-radius: 20px;
-    width: 80%;
-    height: 100%;
-    margin-bottom: 5%;
-    background-color: rgba(255, 255, 255, 0.87);
+    width: 85%;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
   }
   .ImgOne img {
     margin: 2%;
     width: 90%;
-    height: 100%;
+    height: 60%;
     border-radius: 20px;
     box-shadow: inset 4px 4px rgba(21, 40, 180, 0);
   }
@@ -88,16 +101,18 @@
   }
 
   .ImgTwo img {
-    margin-top: 10px;
-    width: 180px;
-    /* height: 160%; */
+    margin: 2%;
+    width: 90%;
+    height: 60%;
     border-radius: 20px;
-    justify-items: center;
     box-shadow: inset 4px 4px rgba(21, 40, 180, 0);
+  }
+  article{
+    position: relative;
   }
 
   .ContainerTwo {
-    float: right;
+    margin: 2% auto;
     bottom: 30%;
     color: black;
     padding: 10px;
@@ -109,10 +124,13 @@
     background-color: rgb(255, 255, 255);
   }
 
-  p {
+  .homep {
     font-size: 11px;
+    margin-right: 20px;
+    position: relative;
   }
-  h1 {
+.home1 {
     font-size: 14px;
+    font-family: papyrus;
   }
 }
