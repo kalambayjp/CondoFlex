@@ -10,53 +10,42 @@ const Home = (props) => {
       <div className="ContainerOne">
         <section>
           <article>
-            <h1>Book your amenities on the go.</h1>
-            <p>
-              Welcome to Condoflex, with this application you can easily register and 
+            <h1 className="home1">Book your amenities on the go.</h1>
+            <p className="homep">
+              Welcome to Condoflex, with this application you can easily register, and 
               start booking your condominium amenities on the go. Its fast and easy to navigate.
               Join the flex zone now!
             </p>
-            <p>
-              Standing on the River Thames, London has been a major settlement
-              for two millennia, its history going back to its founding by the
-              Romans, who named it Londinium.
-            </p>
+
           </article>
-        </section>
-      </div>
-      <div className="ImgOne">
+          <div className="ImgOne">
             
             <img src={imgone} href="/" alt="Condo Flex" />
       </div>
-
-      <div className="ImgTwo">
-      <article>
-      <img  src={imgtwo} href="/" alt="Condo Flex" />
-      <img src={imgthree} href="/" alt="Condo Flex" />
-            
-          </article>
+        </section>
       </div>
+      
+
+      
 
 
       <div className="ContainerTwo">
         <section>
           <article>
-            <h1>Record Keeping</h1>
-            <p>
-            Get rid of manual processess of keeping records and paper pileups. 
+            <h1 className="home1" >Record Keeping</h1>
+            <p className="homep">
+            Get rid of manual processess of keeping records and papers. 
             Enjoy better organization and consistency using digital forms and documents.
-            U
-            </p>
-            <p>
-            Get rid of manual processess of keeping records and paper pileups. 
-            Enjoy better organization and consistency using digital forms and documents.
-            U 
-            Get rid of manual processess of keeping records and paper pileups. 
-            Enjoy better organization and consistency using digital forms and documents.
-            U
             </p>
    
           </article>
+          <div className="ImgTwo">
+      <article>
+      <img  src={imgtwo} href="/" alt="Condo Flex" />
+      {/* <img src={imgthree} href="/" alt="Condo Flex" /> */}
+            
+          </article>
+      </div>
         </section>
       </div>
 

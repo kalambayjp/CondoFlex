@@ -29,7 +29,9 @@ function Nav(props) {
     <nav className="navbar">
       <div className="container-fluid">
         <div id="logo">
+        <Link to="/">
           <img src={logo} href="/" alt="Condo Flex" />
+          </Link>
         </div>
         <section>
           <div>
