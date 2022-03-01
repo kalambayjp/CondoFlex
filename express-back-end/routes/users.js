@@ -42,12 +42,12 @@ router.post('/login', async (req, res) => {
     first_name = usersData.first_name;
     building_id = usersData.building_id;
     Logged="Successful";
-    console.log("Valid")
-    // req.session["name"]="first_name"
+   
+   
   }
   else {
     Logged = "Unsuccessful";
-    console.log("invalid")
+    
   }
 
   res.json({first_name: first_name,building_id: building_id, Logged:Logged, user_id: user_id});
@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
 
 
 router.post('/register', async (req, res) => {
-  console.log("Register Data:", req.body.formData)
+  
   const { first_name, last_name, email, password, phone_number, unit_number, building_id } = req.body.formData
 
   const firstName = first_name;
@@ -98,7 +98,7 @@ router.post('/register', async (req, res) => {
     userId = usersData.id;
     userCreated = "Successful";
   
-    console.log("User Created: ",)
+   
   }
   else {
     userCreated = "Unsuccessful";

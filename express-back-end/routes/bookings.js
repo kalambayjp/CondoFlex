@@ -81,7 +81,7 @@ router.get("/my_bookings", async (req, res) => {
 
 router.delete("/delete", async (req, res) => {
   const { booking_id} = req.query;
-  console.log("booking id -----> ",booking_id)
+ 
   try {
     const deleteBooking = await bookings.delete({
       where: {
@@ -97,7 +97,7 @@ router.delete("/delete", async (req, res) => {
 
 router.delete("/delete", async (req, res) => {
   const { booking_id} = req.query;
-  console.log("BOOOOKING ID",booking_id)
+
   try {
     const deleteBooking = await bookings.delete({
       where: {
