@@ -34,7 +34,7 @@ function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(formData);
+
     if (formData.first_name && formData.last_name && formData.email && formData.password && formData.phone_number && formData.building_id && formData.unit_number) {
       axios
         .post('http://localhost:8080/api/users/register', { formData })
@@ -48,14 +48,12 @@ function Register(props) {
           if (userCreated === "Successful") {
             console.log(userId);
 
-            // setCookie('Name', id, { path: '/' });
             localStorage.setItem("name", firstName);
             localStorage.setItem("id", userId)
             localStorage.setItem("building_id", buildingCode)
             navigate(`/`);
           } else {
             setIsOpen(!isOpen);
-            // return  navigate(`/register`);
           }
         })
         .catch(err => {

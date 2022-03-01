@@ -16,11 +16,9 @@ export const getBookingsForDay = async (selectedAmenity, dayFormatted) => {
 
 export const getMyBookings = async (user_id) => {
   try {
-    console.log("USERRRR",user_id);
     const result = await axios.get(
       `http://localhost:8080/api/bookings/my_bookings?userId=${user_id}`
     )
-    console.log("SSSDDDDD",result)
     return result.data
 
   } catch(err) {

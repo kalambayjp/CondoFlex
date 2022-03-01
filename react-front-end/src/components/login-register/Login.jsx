@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-// import { useCookies } from "react-cookie";
 import Popup from "../PopUp";
 
 //For Login view
 export default function Login(props) {
-  // const [email, setEmail] = useState();
-  // const [password, setPassword] = useState();
-  // const [cookies, setCookie] = useCookies(["user"]);
   const [isOpen, setIsOpen] = useState(false);
   const [formDetails, setFormDetails] = useState({
     email: "",
@@ -21,9 +17,6 @@ export default function Login(props) {
   };
 
   let navigate = useNavigate();
- 
-  // let users = props.users || [];
-
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -41,27 +34,19 @@ export default function Login(props) {
 
           data: { Logged, building_id, first_name, user_id},
         } = res;
-        console.log("RESPONSE", res.data);
-
-        // If successfully logged IN.
 
         if (Logged === "Successful") {
 
-         
-          // setCookie('Name', first_name, { path: '/' });
           localStorage.setItem("name", first_name);
           localStorage.setItem("building_id",building_id)
           localStorage.setItem("id",user_id)
           navigate(`/${building_id}/amenities`);
 
           props.setState((prevState) => {
-            // Object.assign would also work
-            console.log("data -->", allData)
             return { ...prevState, user: {id: user_id, first_name: first_name} , buildingId: building_id};
           });
         } else {
           setIsOpen(!isOpen);
-          // return  navigate(`/register`);
         }
       });
 

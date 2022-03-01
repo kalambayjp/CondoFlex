@@ -12,7 +12,6 @@ import AmenitiesList from "./amenity-list/AmenitiesList";
 import AmenityCalendar from "./calendar/AmenityCalendar";
 import { CookiesProvider } from "react-cookie";
 import moment from "moment";
-// import { lazy } from "react";
 import PrivateRoute from "../privateroute/PrivateRoute";
 import Home from "./Home.jsx";
 

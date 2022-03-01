@@ -12,8 +12,6 @@ export default function MyBookings(props) {
     });
   }, []);
 
-  console.log("BOOOOOOOKi", bookings);
-
   return (
     <>
       <h1>My Bookings</h1>

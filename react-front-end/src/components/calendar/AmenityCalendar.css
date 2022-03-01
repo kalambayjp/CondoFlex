@@ -2,7 +2,8 @@ section {
   display: flex;
 }
 .calendar-header {
-  margin: 0px;
+  display: flex;
+  text-align: center;
 }
 div.calendar {
 
@@ -18,9 +19,9 @@ div.calendar {
   box-shadow: 1rem 4px 8px rgba(49, 49, 49, 0.76);
   cursor: pointer;
 }
-div.calendar-header {
+/* div.calendar-header {
   visibility: hidden;
-}
+} */
 div.day{
   top: 40%;
   margin-top: 5px;

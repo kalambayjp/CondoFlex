@@ -7,7 +7,6 @@ import moment from "moment";
 export default function MyBookings(props) {
   const user_id = localStorage.getItem("id");
   const [bookings, setBookings] = useState([]);
-  const [count, setCount] = React.useState(0);
 
   const deleteBooking = (booking_id) => {
   
@@ -16,17 +15,11 @@ export default function MyBookings(props) {
     .then((res)=>{
       
       const updatedBookings=bookings.filter((booking)=>booking.id !== res.data.id)
-      console.log("UPDATTTEDDDDBOOK", updatedBookings)
       setBookings(updatedBookings)
     })
     .catch(err =>console.log(err))
   };
 
-
-
-
-  // const currentDate=moment().format("YYYY-MM-DD-HH:mm")
-  // console.log("CCCCCCCCC",currentDate);
   const fetchBooking = (bookings) => {
     getMyBookings(user_id).then((res) => {
       return setBookings(res);
@@ -36,7 +29,6 @@ export default function MyBookings(props) {
   useEffect(() => {
     fetchBooking(bookings);
   }, []);
-  console.log("BOOOOOOKINgS", bookings);
 
   return (
     <>

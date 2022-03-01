@@ -72,7 +72,6 @@ export default function AmenityCalendar(props) {
           <SubmitBooking 
             submitBookingTime={submitBookingTime} 
             selectedAmenity={selectedAmenity}
-            // userId={userId}
             setLastRequestTime={setLastRequestTime}
             sum={sum}
             capacity={capacity}
